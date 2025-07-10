@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic Email Marketing Services | HubTechResearch</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary-color: #4a6bff;
+            --secondary-color: #f8f9fa;
+            --accent-color: #ff6b6b;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .service-hero {
+            background: url('../images/index/Vector_2.png') no-repeat center center;
+            background-size: cover;
+            position: relative;
+            overflow: hidden;
+            min-height: 640px;
+        }
+        
+        .service-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* background: linear-gradient(135deg, rgba(74, 107, 255, 0.9) 0%, rgba(74, 107, 255, 0.95) 100%); */
+            background: linear-gradient(135deg, rgb(39 78 255 / 17%) 0%, rgb(74 107 255 / 0%) 100%);
+        }
+        
+        .service-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .process-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .process-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .process-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            font-size: 24px;
+            position: relative;
+            background: rgba(13, 110, 253);
+        }
+        
+        .process-icon span {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: var(--accent-color);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .icon-box {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+        
+        .solution-item {
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+        }
+        
+        .solution-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+        
+        .results-card {
+            background: white;
+            border-radius: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .results-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(90deg, var(--primary-color) 0%, var(--accent-color) 100%);
+        }
+        
+        .progress {
+            height: 8px;
+            border-radius: 4px;
+        }
+        
+        .cta-section {
+            background: url('../images/index/Vector_2.png') no-repeat center center;
+            background-size: cover;
+            position: relative;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* background: linear-gradient(135deg, rgba(33, 37, 41, 0.95) 0%, rgba(52, 58, 64, 0.97) 100%); */
+        }
+        
+        .cta-section .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .opt-out-section {
+            background: url('../images/index/Vector_3.png') no-repeat center center;
+            background-size: cover;
+            padding: 20px 0;
+            border-radius: 16px;
+            margin: 10px 0;
+        }
+        
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        @media (max-width: 768px) {
+            .service-hero {
+                text-align: center;
+                padding: 60px 0;
+            }
+            
+            .service-hero img {
+                margin-top: 30px;
+            }
+        }
+        .round{
+            border-radius: 10px;
+            max-height: 350px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <main class="service-detail">
+        <section class="service-hero text-white py-5">
+            <div class="container mt-4 py-4">
+                  <nav aria-label="breadcrumb">
+                    <!-- <ol class="breadcrumb"> 
+                        <li class="breadcrumb-item text-white active"><a href="../../index.html">Home</a></li>
+                        <li class="breadcrumb-item text-white active"><a href="../index.html">Services</a></li>
+                        <li class="breadcrumb-item text-white active" aria-current="page">Email Marketing</li>
+                    </ol> -->
+                </nav>
+                <div class="row align-items-center mt-6">
+                    <div class="col-lg-6">
+                        <h1 class="display-4 fw-bold mb-4 animate-on-scroll">Strategic Email Marketing Solutions</h1>
+                        <p class="lead mb-4 animate-on-scroll" style="transition-delay: 0.2s">Drive engagement, nurture leads, and boost conversions with our targeted, data-driven email campaigns that deliver measurable results.</p>
+                        <div class="animate-on-scroll" style="transition-delay: 0.4s">
+                            <a href="../../contact.html" class="btn btn-light btn-lg me-3">Get Started</a>
+                            <a href="#how-it-works" class="btn btn-outline-light btn-lg">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 animate-on-scroll rounded" style="transition-delay: 0.3s">
+                        <img class="round" src="https://img.freepik.com/free-photo/icons-floating-with-technological-devices-background_1134-308.jpg?t=st=1752087785~exp=1752091385~hmac=6ce252904c0f172c0ab4f2072c6808f56ec7e6887e7d46e24184b16c9dbd8534&w=996" alt="Email Marketing Strategy" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="how-it-works" class="py-2 bg-white">
+            <div class="container py-4">
+                <div class="row justify-content-center mb-4">
+                    <div class="col-lg-12 text-center">
+                        <h1 class=" fw-bold mb-3 animate-on-scroll">Our Proven Email Marketing Methodology</h1>
+                        <p class="animate-on-scroll" style="transition-delay: 0.2s">We combine data science with creative storytelling to deliver email campaigns that convert.</p>
+                    </div>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3 ">
+                        <div class="process-card shadow border animate-on-scroll">
+                            <div class="p-4">
+                                <div class="process-icon text-white mb-4">
+                                    <i class="bi bi-bar-chart-line"></i>
+                                </div>
+                                <h5 class="text-center mb-3">Data-Driven Segmentation</h5>
+                                <p class="text-center">We analyze customer behavior to create hyper-targeted segments for personalized messaging that resonates.</p>
+                            </div>
+                            <!-- <div class="process-footer bg-light p-3 text-center">
+                                <i class="bi bi-arrow-right-circle text-primary"></i>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="process-card shadow border animate-on-scroll" style="transition-delay: 0.2s">
+                            <div class="p-4">
+                                <div class="process-icon text-white mb-4">
+                                    <i class="bi bi-pencil-square"></i>
+                                </div>
+                                <h5 class="text-center mb-3">Strategic Content Creation</h5>
+                                <p class="text-center">Our team crafts compelling content tailored to each segment's needs, preferences, and journey stage.</p>
+                            </div>
+                            <!-- <div class="process-footer bg-light p-3 text-center">
+                                <i class="bi bi-arrow-right-circle text-primary"></i>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="process-card shadow border animate-on-scroll" style="transition-delay: 0.4s">
+                            <div class="p-4">
+                                <div class="process-icon  text-white mb-4">
+                                    <i class="bi bi-send-check"></i>
+                                </div>
+                                <h5 class="text-center mb-3">Optimized Deployment</h5>
+                                <p class="text-center">We use predictive analytics to determine optimal send times, frequencies, and channels for maximum impact.</p>
+                            </div>
+                            <!-- <div class="process-footer bg-light p-3 text-center">
+                                <i class="bi bi-arrow-right-circle text-primary"></i>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="process-card shadow border animate-on-scroll" style="transition-delay: 0.6s">
+                            <div class="p-4">
+                                <div class="process-icon text-white mb-4">
+                                    <i class="bi bi-graph-up-arrow"></i>
+                                </div>
+                                <h5 class="text-center mb-3">Continuous Optimization</h5>
+                                <p class="text-center">Real-time performance tracking and A/B testing to maximize engagement and conversion rates.</p>
+                            </div>
+                            <!-- <div class="process-footer bg-light p-3 text-center">
+                                <i class="bi bi-arrow-right-circle text-primary"></i>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="py-5 bg-light">
+            <div class="container py-4">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h2 class="display-5 fw-bold mb-4 animate-on-scroll">Comprehensive Email Marketing Solutions</h2>
+                        
+                        <div class="solution-item border shadow animate-on-scroll">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <div class="icon-box bg-primary text-white">
+                                        <i class="bi bi-funnel"></i>
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h5>Lead Nurturing Automation</h5>
+                                    <p>Sophisticated drip campaigns that automatically guide prospects through the sales funnel with behavior-triggered content.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="solution-item border shadow animate-on-scroll" style="transition-delay: 0.1s">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <div class="icon-box bg-primary text-white">
+                                        <i class="bi bi-lightning-charge"></i>
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h5>Performance-Driven Promotions</h5>
+                                    <p>Data-optimized promotional campaigns with dynamic content that adapts to recipient behavior for maximum conversion.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="solution-item border shadow animate-on-scroll" style="transition-delay: 0.2s">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <div class="icon-box bg-primary text-white">
+                                        <i class="bi bi-arrow-counterclockwise"></i>
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h5>Subscriber Reactivation</h5>
+                                    <p>Strategic win-back sequences that identify and re-engage inactive subscribers with personalized incentives.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="solution-item border shadow animate-on-scroll" style="transition-delay: 0.3s">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <div class="icon-box bg-primary text-white">
+                                        <i class="bi bi-globe2"></i>
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h5>Global Campaign Localization</h5>
+                                    <p>Culturally adapted email strategies with region-specific content, timing, and compliance considerations.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="results-card border shadow p-4 animate-on-scroll">
+                            <h4 class="text-center mb-4">Our Email Marketing Performance</h4>
+                            <p class="text-center mb-4">Industry benchmarks vs. our client averages</p>
+                            
+                            <div class="result-item mb-4">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span><strong>Open Rate</strong></span>
+                                    <div>
+                                        <span class="text-muted me-3">Industry: 21%</span>
+                                        <strong class="text-primary">Our Average: 42%</strong>
+                                    </div>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 21%"></div>
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 21%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="result-item mb-4">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span><strong>Click-Through Rate</strong></span>
+                                    <div>
+                                        <span class="text-muted me-3">Industry: 3.2%</span>
+                                        <strong class="text-primary">Our Average: 8.5%</strong>
+                                    </div>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 3.2%"></div>
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 5.3%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="result-item mb-4">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span><strong>Conversion Rate</strong></span>
+                                    <div>
+                                        <span class="text-muted me-3">Industry: 2.1%</span>
+                                        <strong class="text-primary">Our Average: 5.2%</strong>
+                                    </div>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 2.1%"></div>
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 3.1%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="result-item mb-4">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span><strong>List Growth Rate</strong></span>
+                                    <div>
+                                        <span class="text-muted me-3">Industry: 12%</span>
+                                        <strong class="text-primary">Our Average: 22%</strong>
+                                    </div>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 12%"></div>
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 10%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="text-center mt-4">
+                                <a href="../../contact.html" class="btn btn-primary btn-lg px-4">Achieve Better Results</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="opt-out-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12 text-center animate-on-scroll">
+                        <h2 class="display-5 fw-bold text-white mb-2 ">Ethical Email Marketing Practices</h2>
+                        <p class="lead text-white mb-5">We prioritize permission-based marketing and make unsubscribing easy to maintain list health and compliance.</p>
+                        
+                        <div class="row g-4">
+                            <div class="col-md-6 animate-on-scroll" style="transition-delay: 0.2s">
+                                <div class="bg-white p-4 rounded shadow border h-100">
+                                    <div class="icon-box bg-primary text-white mb-3 mx-auto">
+                                        <i class="bi bi-check-circle"></i>
+                                    </div>
+                                    <h5>Double Opt-In Process</h5>
+                                    <p>We implement verified subscription methods to ensure compliance and build high-quality lists.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 animate-on-scroll" style="transition-delay: 0.4s">
+                                <div class="bg-white p-4 rounded shadow border h-100">
+                                    <div class="icon-box bg-primary text-white  mb-3 mx-auto">
+                                        <i class="bi bi-envelope-x"></i>
+                                    </div>
+                                    <h5>One-Click Unsubscribe</h5>
+                                    <p>Clear, prominent unsubscribe options in every email to maintain trust and compliance with regulations.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="py-5 bg-white">
+            <div class="container py-4">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12 text-center animate-on-scroll">
+                        <h2 class="display-5 fw-bold mb-2">Why Our Email Marketing Delivers Results</h2>
+                        <p class="lead mb-5">Our approach combines technology, psychology, and continuous optimization</p>
+                    </div>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-md-4 animate-on-scroll">
+                        <div class="p-4 h-100">
+                            <img src="../images/index/big-data-analytics.png" alt="Data Driven" class="img-fluid mb-4" style="height: 80px;">
+                            <h4 class="mb-3">Behavioral Triggers</h4>
+                            <p>Automated emails triggered by specific user actions or inactions to deliver hyper-relevant messaging.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 animate-on-scroll" style="transition-delay: 0.2s">
+                        <div class="p-4 h-100">
+                            <img src="../images/index/personalized.png" alt="Personalization" class="img-fluid mb-4" style="height: 80px;">
+                            <h4 class="mb-3">Advanced Personalization</h4>
+                            <p>Dynamic content that adapts based on subscriber data, preferences, and past interactions.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 animate-on-scroll" style="transition-delay: 0.4s">
+                        <div class="p-4 h-100">
+                            <img src="../images/index/workflow.png" alt="AI Optimization" class="img-fluid mb-4" style="height: 80px;">
+                            <h4 class="mb-3">AI Optimization</h4>
+                            <p>Machine learning algorithms that continuously test and optimize subject lines, content, and timing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="cta-section py-5 text-white">
+            <div class="container py-4">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <h3 class="mb-3 animate-on-scroll">Ready to Elevate Your Email Marketing Strategy?</h3>
+                        <p class="mb-lg-0 animate-on-scroll" style="transition-delay: 0.2s">Our specialists will analyze your current efforts and provide a customized strategy to improve performance.</p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end animate-on-scroll" style="transition-delay: 0.3s">
+                        <a href="../../contact.html" class="btn btn-light btn-lg px-4">Schedule Consultation</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <script src="../../js/custom.js"></script>
+    
+    <script>
+        // Load header and footer
+        fetch('../../templates/header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header').innerHTML = data);
+            
+        fetch('../../templates/footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer').innerHTML = data);
+            
+        // Animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.classList.add('animated');
+                }
+            });
+        }
+        
+        // Initialize animations on load
+        window.addEventListener('load', animateOnScroll);
+        
+        // Animate elements on scroll
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
+</body>
+</html>

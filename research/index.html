@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HubTechResearch - Technology Research & Insights</title>
+    <!-- Preload critical resources -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="preload" href="css/bootstrap.min.css" as="style">
+    <link rel="preload" href="js/bootstrap.bundle.min.js" as="script">
+    <!-- CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/owl.carousel.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <!-- SEO Meta -->
+    <meta name="description" content="Cutting-edge technology research reports, whitepapers, and market analysis from HubTechResearch's global research network.">
+    <meta name="keywords" content="technology research, market analysis, whitepapers, case studies, tech trends, innovation reports">
+    <style>
+        /* Research-specific styles */
+        .research-hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/research-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .research-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+            border: none;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .research-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .research-category {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: #0d6efd;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .research-img {
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .research-card:hover .research-img {
+            transform: scale(1.05);
+        }
+        
+        .stat-card {
+            border-left: 4px solid #0d6efd;
+            transition: all 0.3s;
+        }
+        
+        .stat-card:hover {
+            background-color: #f8f9fa;
+            transform: translateY(-3px);
+        }
+        
+        .methodology-step {
+            position: relative;
+            padding-left: 80px;
+            margin-bottom: 2rem;
+        }
+        
+        .methodology-number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 60px;
+            height: 60px;
+            background-color: #0d6efd;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .filter-btn.active {
+            background-color: #0d6efd;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .research-hero {
+                height: 50vh;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Mega Menu -->
+    <div id="header"></div>
+
+    <!-- Research Hero -->
+    <section class="research-hero text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1 class="display-3 fw-bold mb-4">Global Technology Research</h1>
+                    <p class="lead mb-4">Data-driven insights and analysis from our worldwide network of technology experts</p>
+                    <a href="#reports" class="btn btn-primary btn-lg px-4 me-2">View Reports</a>
+                    <a href="#methodology" class="btn btn-outline-light btn-lg px-4">Our Methodology</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Stats -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="card stat-card h-100">
+                        <div class="card-body text-center p-4">
+                            <h3 class="display-5 fw-bold text-primary">250+</h3>
+                            <p class="mb-0">Published Research Papers</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card stat-card h-100">
+                        <div class="card-body text-center p-4">
+                            <h3 class="display-5 fw-bold text-primary">85</h3>
+                            <p class="mb-0">Countries Covered</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card stat-card h-100">
+                        <div class="card-body text-center p-4">
+                            <h3 class="display-5 fw-bold text-primary">500+</h3>
+                            <p class="mb-0">Industry Experts</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card stat-card h-100">
+                        <div class="card-body text-center p-4">
+                            <h3 class="display-5 fw-bold text-primary">10K+</h3>
+                            <p class="mb-0">Data Points Analyzed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Reports -->
+    <section id="reports" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Latest Research Reports</h2>
+                <p class="lead text-muted">Cutting-edge analysis on emerging technologies and market trends</p>
+            </div>
+            
+            <!-- Filter Buttons -->
+            <div class="d-flex flex-wrap justify-content-center gap-2 mb-5">
+                <button class="btn btn-outline-primary filter-btn active" data-filter="all">All Reports</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="ai">Artificial Intelligence</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="iot">IoT</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="cloud">Cloud Computing</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="cyber">Cybersecurity</button>
+            </div>
+            
+            <!-- Reports Grid -->
+            <div class="row g-4" id="reports-grid">
+                <!-- Report 1 -->
+                <div class="col-md-6 col-lg-4" data-category="ai">
+                    <div class="card research-card">
+                        <div class="position-relative">
+                            <img src="images/ai-report.jpg" class="card-img-top research-img" alt="AI Report">
+                            <span class="research-category">AI</span>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="h5">Generative AI Market Landscape 2023</h3>
+                            <p class="text-muted">Comprehensive analysis of the generative AI ecosystem and adoption trends across industries.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-light text-dark">June 2023</span>
+                                <a href="#" class="btn btn-sm btn-primary">Download</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Report 2 -->
+                <div class="col-md-6 col-lg-4" data-category="iot">
+                    <div class="card research-card">
+                        <div class="position-relative">
+                            <img src="images/iot-report.jpg" class="card-img-top research-img" alt="IoT Report">
+                            <span class="research-category">IoT</span>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="h5">Industrial IoT Adoption Benchmark</h3>
+                            <p class="text-muted">Global survey of IIoT implementation patterns and ROI metrics in manufacturing.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-light text-dark">May 2023</span>
+                                <a href="#" class="btn btn-sm btn-primary">Download</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Report 3 -->
+                <div class="col-md-6 col-lg-4" data-category="cloud">
+                    <div class="card research-card">
+                        <div class="position-relative">
+                            <img src="images/cloud-report.jpg" class="card-img-top research-img" alt="Cloud Report">
+                            <span class="research-category">Cloud</span>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="h5">Multi-Cloud Strategy Best Practices</h3>
+                            <p class="text-muted">Evaluation framework for enterprise multi-cloud architectures and cost optimization.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-light text-dark">April 2023</span>
+                                <a href="#" class="btn btn-sm btn-primary">Download</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Report 4 -->
+                <div class="col-md-6 col-lg-4" data-category="cyber">
+                    <div class="card research-card">
+                        <div class="position-relative">
+                            <img src="images/cyber-report.jpg" class="card-img-top research-img" alt="Cyber Report">
+                            <span class="research-category">Security</span>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="h5">Zero Trust Adoption Trends</h3>
+                            <p class="text-muted">Market analysis of Zero Trust security implementations and vendor landscape.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-light text-dark">March 2023</span>
+                                <a href="#" class="btn btn-sm btn-primary">Download</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Report 5 -->
+                <div class="col-md-6 col-lg-4" data-category="ai">
+                    <div class="card research-card">
+                        <div class="position-relative">
+                            <img src="images/ai-ethics-report.jpg" class="card-img-top research-img" alt="AI Ethics Report">
+                            <span class="research-category">AI</span>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="h5">AI Ethics Framework Analysis</h3>
+                            <p class="text-muted">Comparative study of global AI ethics guidelines and implementation challenges.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-light text-dark">February 2023</span>
+                                <a href="#" class="btn btn-sm btn-primary">Download</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Report 6 -->
+                <div class="col-md-6 col-lg-4" data-category="iot">
+                    <div class="card research-card">
+                        <div class="position-relative">
+                            <img src="images/smart-cities-report.jpg" class="card-img-top research-img" alt="Smart Cities Report">
+                            <span class="research-category">IoT</span>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="h5">Smart Cities Infrastructure Index</h3>
+                            <p class="text-muted">Evaluation of 100 global cities' IoT readiness and implementation maturity.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-light text-dark">January 2023</span>
+                                <a href="#" class="btn btn-sm btn-primary">Download</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="#" class="btn btn-outline-primary px-4">View All Reports</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Methodology -->
+    <section id="methodology" class="py-5 bg-dark text-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Our Research Methodology</h2>
+                <p class="lead">Rigorous processes that ensure reliable, actionable insights</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="methodology-step">
+                        <div class="methodology-number">1</div>
+                        <h3>Problem Definition</h3>
+                        <p>We work with clients and stakeholders to precisely define research objectives and key questions to address.</p>
+                    </div>
+                    
+                    <div class="methodology-step">
+                        <div class="methodology-number">2</div>
+                        <h3>Data Collection</h3>
+                        <p>Our global network gathers primary data through surveys, interviews, and proprietary data sources.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="methodology-step">
+                        <div class="methodology-number">3</div>
+                        <h3>Analysis & Validation</h3>
+                        <p>Advanced analytical techniques combined with expert validation ensure data accuracy and relevance.</p>
+                    </div>
+                    
+                    <div class="methodology-step">
+                        <div class="methodology-number">4</div>
+                        <h3>Insight Delivery</h3>
+                        <p>Findings are presented in actionable formats tailored to different stakeholder needs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Partners -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Our Research Partners</h2>
+                <p class="lead text-muted">Collaborating with leading institutions worldwide</p>
+            </div>
+            
+            <div class="row g-4 justify-content-center align-items-center">
+                <div class="col-6 col-md-3 text-center">
+                    <img src="images/partner1.png" alt="Partner 1" class="img-fluid" style="max-height: 60px; filter: grayscale(100%) opacity(70%);">
+                </div>
+                <div class="col-6 col-md-3 text-center">
+                    <img src="images/partner2.png" alt="Partner 2" class="img-fluid" style="max-height: 60px; filter: grayscale(100%) opacity(70%);">
+                </div>
+                <div class="col-6 col-md-3 text-center">
+                    <img src="images/partner3.png" alt="Partner 3" class="img-fluid" style="max-height: 60px; filter: grayscale(100%) opacity(70%);">
+                </div>
+                <div class="col-6 col-md-3 text-center">
+                    <img src="images/partner4.png" alt="Partner 4" class="img-fluid" style="max-height: 60px; filter: grayscale(100%) opacity(70%);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h2 class="display-6 fw-bold mb-3">Need Custom Research?</h2>
+                    <p class="lead mb-0">Our team can conduct bespoke research projects tailored to your specific requirements.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+                    <a href="/contact/" class="btn btn-light btn-lg px-4">Request Proposal</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/custom.js"></script>
+    
+    <!-- Initialize components -->
+    <script>
+        // Load templates
+        fetch('../templates/header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header').innerHTML = data);
+            
+        fetch('../templates/footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer').innerHTML = data);
+        
+        // Filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const reportItems = document.querySelectorAll('[data-category]');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Update active button
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Filter items
+                    reportItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

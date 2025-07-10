@@ -1,0 +1,93 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "title": "Breakthrough in Quantum Computing Announced",
+      "excerpt": "Researchers have achieved quantum supremacy with a new 128-qubit processor that solves complex problems in seconds.",
+      "category": "technology",
+      "date": "2023-06-15",
+      "author": "Dr. Sarah Chen",
+      "image": "../images/news/quantum-computing.jpg",
+      "popular": true,
+      "content": "Full article content would go here..."
+    },
+    {
+      "id": 2,
+      "title": "Global Tech Giants Form AI Ethics Consortium",
+      "excerpt": "Leading technology companies establish new standards for responsible AI development and deployment.",
+      "category": "business",
+      "date": "2023-06-12",
+      "author": "Michael Johnson",
+      "image": "../images/news/ai-ethics.jpg",
+      "popular": true,
+      "content": "Full article content would go here..."
+    },
+    {
+      "id": 3,
+      "title": "New Digital Marketing Trends for 2023",
+      "excerpt": "Experts predict conversational marketing and AI-powered personalization will dominate this year's strategies.",
+      "category": "marketing",
+      "date": "2023-06-10",
+      "author": "Emily Rodriguez",
+      "image": "../images/news/marketing-trends.jpg",
+      "popular": false,
+      "content": "Full article content would go here..."
+    },
+    {
+      "id": 4,
+      "title": "5G Rollout Accelerates Across Europe",
+      "excerpt": "Mobile operators report faster-than-expected deployment of next-generation networks in major cities.",
+      "category": "technology",
+      "date": "2023-06-08",
+      "author": "Thomas Weber",
+      "image": "../images/news/5g-rollout.jpg",
+      "popular": true,
+      "content": "Full article content would go here..."
+    },
+    {
+      "id": 5,
+      "title": "Tech Startups See Record Funding in Q2",
+      "excerpt": "Venture capital investment in technology startups reaches all-time high despite economic uncertainties.",
+      "category": "business",
+      "date": "2023-06-05",
+      "author": "Lisa Park",
+      "image": "../images/news/tech-funding.jpg",
+      "popular": false,
+      "content": "Full article content would go here..."
+    },
+    {
+      "id": 6,
+      "title": "Personalization Algorithms Transform Email Marketing",
+      "excerpt": "New machine learning approaches deliver 30% higher engagement rates for targeted campaigns.",
+      "category": "marketing",
+      "date": "2023-06-03",
+      "author": "David Wilson",
+      "image": "../images/news/email-marketing.jpg",
+      "popular": true,
+      "content": "Full article content would go here..."
+    },
+    {
+      "id": 7,
+      "title": "Edge Computing Adoption Grows in Manufacturing",
+      "excerpt": "Industrial companies report significant efficiency gains from decentralized computing architectures.",
+      "category": "technology",
+      "date": "2023-05-30",
+      "author": "Robert Kim",
+      "image": "../images/news/edge-computing.avif",
+      "popular": false,
+      "content": "Full article content would go here..."
+    },
+    {
+      "id": 8,
+      "title": "New Data Privacy Regulations Take Effect",
+      "excerpt": "Updated compliance requirements impact how businesses collect and process customer information.",
+      "category": "business",
+      "date": "2023-05-28",
+      "author": "Sophie Martin",
+      "image": "../images/news/data-privacy.avif",
+      "popular": false,
+      "content": "Full article content would go here..."
+    }
+  ],
+  "popular": [1, 2, 4, 6]
+}

@@ -1,0 +1,12 @@
+{
+    "title": "Email Marketing",
+    "excerpt": "Drive engagement and boost conversions with targeted email campaigns",
+    "icon": "../images/icons/email-marketing.svg",
+    "url": "services/email-marketing.html",
+    "features": [
+        "Audience segmentation",
+        "Personalized content",
+        "A/B testing",
+        "Performance analytics"
+    ]
+}

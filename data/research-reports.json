@@ -1,0 +1,39 @@
+[
+  {
+    "id": "rep-2023-ai",
+    "title": "Generative AI Market Landscape 2023",
+    "excerpt": "Comprehensive analysis of the generative AI ecosystem and adoption trends across industries.",
+    "category": "Artificial Intelligence",
+    "date": "2023-06-15",
+    "author": "AI Research Team",
+    "image": "./images/Featured_Research/Generative.avif",
+    "pages": 48,
+    "downloads": 1250,
+    "premium": false
+  },
+  {
+    "id": "rep-2023-iot",
+    "title": "Industrial IoT Adoption Benchmark",
+    "excerpt": "Global survey of IIoT implementation patterns and ROI metrics in manufacturing sectors.",
+    "category": "Internet of Things",
+    "date": "2023-05-22",
+    "author": "IoT Research Division",
+    "image": "./images/Featured_Research/Industrial_IoT.jpg",
+    "pages": 36,
+    "downloads": 892,
+    "premium": true
+  },
+  {
+    "id": "rep-2023-cloud",
+    "title": "Multi-Cloud Strategy Best Practices",
+    "excerpt": "Evaluation framework for enterprise multi-cloud architectures and cost optimization.",
+    "category": "Cloud Computing",
+    "date": "2023-04-18",
+    "author": "Cloud Research Group",
+    "image": "./images/Featured_Research/Multi-Cloud.jpg",
+    "pages": 52,
+    "downloads": 1532,
+    "premium": false
+  }
+
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "Artificial Intelligence",
+    "description": "Cutting-edge research in machine learning, neural networks, and AI applications",
+    "icon": "bi-robot",
+    "link": "/research/artificial-intelligence.html",
+    "image": "./images/research/Artificial_Intelligence.jpg",
+    "category": "Tech"
+  },
+  {
+    "id": 2,
+    "title": "Cybersecurity",
+    "description": "Latest trends and solutions in digital security and threat prevention",
+    "icon": "bi-shield-lock",
+    "link": "/research/cybersecurity",
+    "image": "./images/research/cybersecurity.avif",
+    "category": "IT Security"
+  },
+  {
+    "id": 3,
+    "title": "Cloud Computing",
+    "description": "Innovations in cloud infrastructure, services, and deployment models",
+    "icon": "bi-cloud",
+    "link": "/research/cloud-computing",
+    "image": "./images/research/Cloud_Computing.jpg",
+    "category": "Tech"
+  },
+  {
+    "id": 4,
+    "title": "Data Analytics",
+    "description": "Advanced techniques for big data processing and business intelligence",
+    "icon": "bi-bar-chart",
+    "link": "/research/data-analytics",
+    "image": "./images/research/Data_Analytics.jpg",
+    "category": "Retail"
+  },
+  {
+    "id": 5,
+    "title": "IoT & Edge Computing",
+    "description": "Research on connected devices and distributed computing architectures",
+    "icon": "bi-cpu",
+    "link": "/research/iot-edge",
+    "image": "./images/research/ioT.jpg",
+    "category": "Tech"
+  },
+  {
+    "id": 6,
+    "title": "Blockchain",
+    "description": "Studies on decentralized technologies and their business applications",
+    "icon": "bi-link-45deg",
+    "link": "/research/blockchain",
+    "image": "./images/research/blockchain_technology.avif",
+    "category": "HR"
+  }
+]

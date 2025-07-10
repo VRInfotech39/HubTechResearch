@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HubTechResearch - Global Technology Research & Marketing Solutions</title>
+    <!-- Preload critical resources -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- CSS -->
+    <style>
+        :root {
+            --primary-color: #4a6bff;
+            --secondary-color: #f8f9fa;
+            --accent-color: #ff6b6b;
+            --dark-color: #212529;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+        
+        /* Hero Carousel */
+        .hero-slide {
+            position: relative;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding-top: 120px;
+        }
+        
+        /* Research Categories */
+        /* .research-categories {
+            background: url('../images/index/Vector_3.png') repeat;
+            position: relative;
+        }
+         */
+        /* Modern Filter Tabs */
+        .filter-tabs {
+            border: none;
+            margin-bottom: 30px;
+        }
+        
+        .filter-tabs .nav-item {
+            margin: 0 5px;
+        }
+        
+        .filter-tabs .nav-link {
+            border: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            padding: 12px 20px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            background: transparent;
+        }
+        
+        .filter-tabs .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        
+        .filter-tabs .nav-link:hover,
+        .filter-tabs .nav-link.active {
+            color: var(--primary-color);
+            background: rgba(74, 107, 255, 0.1);
+        }
+        
+        .filter-tabs .nav-link.active::before {
+            width: 100%;
+        }
+        
+        /* Cards */
+        .research-card, .service-card {
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            background: white;
+        }
+        
+        .research-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .research-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(13, 110, 253);
+            color: white;
+            margin: 0 auto 15px;
+            font-size: 24px;
+        }
+        
+        /* Marketing Services */
+        .marketing-services {
+            background: url('../images/index/Vector_3.png') repeat;
+            position: relative;
+        }
+        
+        .marketing-services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* background: rgba(0, 0, 0, 0.85); */
+        }
+        
+        .service-card {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary-color);
+            color: white;
+            font-size: 24px;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        /* Stats Box */
+        .stats-box {
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* .stats-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('../images/index/Vector_2.png') repeat;
+            opacity: 0.1;
+        } */
+
+        .newsletter{
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('../images/index/Vector_2.png') repeat;
+            /* opacity: 0.1; */
+        }
+        
+        .stat-item {
+            margin-bottom: 20px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        /* Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content {
+                padding-top: 80px;
+            }
+            
+            .hero-slide {
+                height: 80vh;
+            }
+            
+            .filter-tabs .nav-link {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+            
+            .service-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .service-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+    <!-- SEO Meta -->
+    <meta name="description" content="Global technology research platform providing cutting-edge insights, marketing solutions, and advertising services specializing in email and call marketing.">
+    <meta name="keywords" content="technology research, marketing solutions, email marketing, call marketing, tech news, whitepapers, case studies">
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "HubTechResearch",
+      "url": "https://hubtechresearch.com",
+      "logo": "https://hubtechresearch.com/images/logo.png",
+      "sameAs": [
+        "https://twitter.com/hubtechresearch",
+        "https://linkedin.com/company/hubtechresearch"
+      ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Header with Mega Menu -->
+    <div id="header"></div>
+
+    <!-- Hero Carousel -->
+    <section id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+                <div class="hero-slide d-flex align-items-center" style="background-image: url('images/isometric-bot.avif')">
+                    <div class="overlay"></div>
+                    <div class="container text-white text-center">
+                        <div class="hero-content animate-on-scroll">
+                            <h1 class="display-3 fw-bold mb-4">Global Technology Insights</h1>
+                            <p class="lead mb-5">Cutting-edge research and analysis for the digital age</p>
+                            <a href="/research/" class="btn btn-primary btn-lg px-4">Explore Research</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <div class="hero-slide d-flex align-items-center" style="background-image: url('images/target-goals.avif')">
+                    <div class="overlay"></div>
+                    <div class="container text-white text-center">
+                        <div class="hero-content animate-on-scroll">
+                            <h1 class="display-3 fw-bold mb-4">Targeted Marketing Solutions</h1>
+                            <p class="lead mb-5">Maximize ROI with our call and email marketing expertise</p>
+                            <a href="/services/" class="btn btn-primary btn-lg px-4">Our Services</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+    </section>
+
+    <!-- Research Categories -->
+    <section class="research-categories py-2">
+        <div class="container py-4">
+            <h1 class="section-title  text-center mb-3 animate-on-scroll">Research Categories</h1>
+            
+            <!-- Modern Filter Tabs -->
+            <ul class="nav nav-pills filter-tabs justify-content-center animate-on-scroll" id="researchTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="all-research-tab" data-bs-toggle="pill" data-bs-target="#all-research" type="button">All Categories</button>
+                </li>
+                <!-- Tabs will be populated from JSON categories -->
+            </ul>
+            
+            <div class="tab-content mt-4" id="researchTabsContent">
+                <div class="tab-pane fade show active" id="all-research" role="tabpanel">
+                    <div class="row" id="all-research-container"></div>
+                </div>
+                <!-- Panels will be populated from JSON categories -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest News with Tabs -->
+    <section class="latest-news py-2 bg-light">
+        <div class="container py-4">
+            <h2 class="section-title text-center mb-3 animate-on-scroll">Latest Updates</h2>
+            
+            <!-- Modern News Tabs -->
+            <ul class="nav nav-pills filter-tabs justify-content-center animate-on-scroll" id="newsTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="all-news-tab" data-bs-toggle="pill" data-bs-target="#all-news" type="button">All News</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="tech-news-tab" data-bs-toggle="pill" data-bs-target="#tech-news" type="button">Technology</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="business-news-tab" data-bs-toggle="pill" data-bs-target="#business-news" type="button">Business</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="marketing-news-tab" data-bs-toggle="pill" data-bs-target="#marketing-news" type="button">Marketing</button>
+                </li>
+            </ul>
+            
+            <div class="tab-content mt-4" id="newsTabsContent">
+                <div class="tab-pane fade show active" id="all-news" role="tabpanel">
+                    <div class="row" id="all-news-container"></div>
+                </div>
+                <div class="tab-pane fade" id="tech-news" role="tabpanel">
+                    <div class="row" id="tech-news-container"></div>
+                </div>
+                <div class="tab-pane fade" id="business-news" role="tabpanel">
+                    <div class="row" id="business-news-container"></div>
+                </div>
+                <div class="tab-pane fade" id="marketing-news" role="tabpanel">
+                    <div class="row" id="marketing-news-container"></div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4 animate-on-scroll">
+                <a href="/news/" class="btn btn-outline-primary">View All News</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marketing Services Highlight -->
+    <section class="marketing-services py-5 text-white">
+        <div class="container py-4">
+            <div class="row align-items-center">
+                <div class="col-lg-6 animate-on-scroll">
+                    <h1 class=" fw-bold mb-4">Our Advertising Specialties</h1>
+                    <div class="service-card animate-on-scroll" style="transition-delay: 0.2s">
+                        <div class="service-icon">
+                            <i class="bi bi-telephone-outbound"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Call Marketing</h3>
+                            <p>High-conversion call strategies tailored to your target demographics with international reach capabilities.</p>
+                            <a href="/services/call-marketing" class="btn btn-sm btn-light">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="service-card mt-4 animate-on-scroll" style="transition-delay: 0.4s">
+                        <div class="service-icon">
+                            <i class="bi bi-envelope"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Email Marketing</h3>
+                            <p>Targeted email campaigns with advanced analytics and segmentation for maximum engagement.</p>
+                            <a href="/services/email-marketing.html" class="btn btn-sm btn-light">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 pt-4 animate-on-scroll" style="transition-delay: 0.3s">
+                    <div class="stats-box p-4 rounded">
+                        <h3 class="text-white mb-4">Our Impact</h3>
+                        <div class="stat-item animate-on-scroll" style="transition-delay: 0.4s">
+                            <div class="stat-number" data-count="6">0</div>
+                            <div class="stat-label">Research Papers Published</div>
+                        </div>
+                        <div class="stat-item animate-on-scroll" style="transition-delay: 0.5s">
+                            <div class="stat-number" data-count="50">0</div>
+                            <div class="stat-label">Marketing Campaigns</div>
+                        </div>
+                        <div class="stat-item animate-on-scroll" style="transition-delay: 0.6s">
+                            <div class="stat-number" data-count="25">0</div>
+                            <div class="stat-label">Countries Reached</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Reports -->
+    <section class="research-reports py-5">
+        <div class="container py-4">
+            <h1 class="section-title text-center mb-5 animate-on-scroll">Featured Research Reports</h1>
+            <div class="row animate-on-scroll" id="reports-container"></div>
+            <div class="text-center mt-4 animate-on-scroll">
+                <a href="/reports/" class="btn btn-primary">View All Reports</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Subscription -->
+    <div id="newsletter"></div>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    
+    <!-- Initialize components -->
+    <script>
+        // Load templates
+        fetch('templates/header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header').innerHTML = data);
+            
+        fetch('templates/footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer').innerHTML = data);
+            
+        fetch('templates/newsletter.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('newsletter').innerHTML = data);
+        
+        // Animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.classList.add('animated');
+                }
+            });
+        }
+        
+        // Initialize animations on load
+        window.addEventListener('load', animateOnScroll);
+        
+        // Animate elements on scroll
+        window.addEventListener('scroll', animateOnScroll);
+        
+        // Number counting animation
+        function animateStats() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.getAttribute('data-count'));
+                const duration = 2000;
+                const start = 0;
+                const increment = target / (duration / 16);
+                let current = start;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        clearInterval(timer);
+                        current = target;
+                    }
+                    stat.textContent = Math.floor(current).toLocaleString();
+                }, 16);
+            });
+        }
+        
+        // Load research categories with filters
+        function loadResearchCategories() {
+            fetch('data/research-categories.json')
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('all-research-container');
+                    const tabsContainer = document.getElementById('researchTabs');
+                    
+                    // Get unique categories from the data
+                    const categories = [...new Set(data.map(item => item.category))];
+                    
+                    // Create filter tabs
+                    categories.forEach(category => {
+                        const tabId = category.toLowerCase().replace(/\s+/g, '-');
+                        
+                        // Add tab
+                        const tabItem = document.createElement('li');
+                        tabItem.className = 'nav-item';
+                        tabItem.role = 'presentation';
+                        tabItem.innerHTML = `
+                            <button class="nav-link" id="${tabId}-tab" data-bs-toggle="pill" data-bs-target="#${tabId}" type="button">${category}</button>
+                        `;
+                        tabsContainer.appendChild(tabItem);
+                        
+                        // Add tab panel
+                        const tabPanel = document.createElement('div');
+                        tabPanel.className = 'tab-pane fade';
+                        tabPanel.id = tabId;
+                        tabPanel.role = 'tabpanel';
+                        tabPanel.setAttribute('aria-labelledby', `${tabId}-tab`);
+                        
+                        const row = document.createElement('div');
+                        row.className = 'row';
+                        row.id = `${tabId}-container`;
+                        tabPanel.appendChild(row);
+                        
+                        document.getElementById('researchTabsContent').appendChild(tabPanel);
+                    });
+                    
+                    // Render all research items
+                    renderResearchItems(data, 'all-research-container');
+                    
+                    // Render categorized items
+                    categories.forEach(category => {
+                        const filteredItems = data.filter(item => item.category === category);
+                        renderResearchItems(filteredItems, `${category.toLowerCase().replace(/\s+/g, '-')}-container`);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error loading research categories:', error);
+                    document.getElementById('all-research-container').innerHTML = `
+                        <div class="col-12 text-center py-5">
+                            <div class="alert alert-warning">Research categories could not be loaded. Please try again later.</div>
+                        </div>
+                    `;
+                });
+        }
+        
+        // Render research items
+        function renderResearchItems(items, containerId) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            
+            if (items.length === 0) {
+                container.innerHTML = `
+                    <div class="col-12 text-center py-5">
+                        <div class="alert alert-info">No research available in this category.</div>
+                    </div>
+                `;
+                return;
+            }
+            
+            container.innerHTML = items.map(item => `
+                <div class="col-md-6 col-lg-4 mb-4 animate-on-scroll">
+                    <div class="card h-100 research-card border shadow">
+                        <div class="card-img-top" style="background-image: url('${item.image}'); height: 200px; background-size: cover;"></div>
+                        <div class="card-body">
+                            <div class="research-icon">
+                                <i class="bi ${item.icon}"></i>
+                            </div>
+                            <h3 class="h5">${item.title}</h3>
+                            <p class="card-text">${item.description}</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <a href="${item.link}" class="btn btn-sm btn-outline-primary">Explore Research</a>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        // Function to load news articles
+        function loadLatestNews(category, containerId) {
+            fetch('data/news-articles.json')
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById(containerId);
+                    if (!container) return;
+
+                    // Filter articles by category if not 'all'
+                    const articles = category === 'all' 
+                        ? data.articles 
+                        : data.articles.filter(article => article.category === category);
+
+                    // Display first 6 articles
+                    const articlesToShow = articles.slice(0, 6);
+                    
+                    container.innerHTML = articlesToShow.map(article => `
+                        <div class="col-md-6 col-lg-4 mb-4 animate-on-scroll">
+                            <div class="card h-100 shadow">
+                                <img src="${article.image}" class="card-img-top" alt="${article.title}" style="height: 200px; object-fit: cover;">
+                                <div class="card-body">
+                                    <span class="badge bg-primary mb-2">${article.category.charAt(0).toUpperCase() + article.category.slice(1)}</span>
+                                    <h3 class="h5">${article.title}</h3>
+                                    <p class="card-text">${article.excerpt}</p>
+                                </div>
+                                <div class=" bg-transparent">
+                                    <a href="/news/article.html?id=${article.id}" class="stretched-link"></a>
+                                </div>
+                            </div>
+                        </div>
+                    `).join('');
+
+                    // If no articles, show message
+                    if (articles.length === 0) {
+                        container.innerHTML = `
+                            <div class="col-12 text-center py-5">
+                                <div class="alert alert-info">No ${category} news available at this time.</div>
+                            </div>
+                        `;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading news:', error);
+                    document.getElementById(containerId).innerHTML = `
+                        <div class="col-12 text-center py-5">
+                            <div class="alert alert-warning">News could not be loaded. Please try again later.</div>
+                        </div>
+                    `;
+                });
+        }
+
+        // Function to load research reports
+        function loadFeaturedReports() {
+            fetch('data/research-reports.json')
+                .then(response => response.json())
+                .then(reports => {
+                    const container = document.getElementById('reports-container');
+                    if (!container) return;
+
+                    // Display first 6 reports
+                    const featuredReports = reports.slice(0, 6);
+                    
+                    container.innerHTML = featuredReports.map(report => `
+                        <div class="col-md-6 col-lg-4 mb-4 animate-on-scroll">
+                            <div class="card h-100 shadow">
+                                <div class="position-relative">
+                                    <img src="${report.image}" class="card-img-top" alt="${report.title}" style="height: 200px; object-fit: cover;">
+                                    ${report.premium ? '<span class="badge bg-warning text-dark position-absolute top-0 end-0 m-2">Premium</span>' : ''}
+                                </div>
+                                <div class="card-body">
+                                    <span class="badge bg-primary mb-2">${report.category}</span>
+                                    <h3 class="h5">${report.title}</h3>
+                                    <p class="card-text">${report.excerpt}</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small class="text-muted">${report.pages} pages • ${report.downloads.toLocaleString()} downloads</small>
+                                    </div>
+                                </div>
+                                <div class="card-footer bg-transparent">
+                                    <a href="/reports/download.html?id=${report.id}" class="btn btn-sm btn-primary w-100">
+                                        ${report.premium ? 'Get Premium' : 'Download Now'}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    `).join('');
+                })
+                .catch(error => {
+                    console.error('Error loading research reports:', error);
+                    const container = document.getElementById('reports-container');
+                    if (container) {
+                        container.innerHTML = `
+                            <div class="col-12 text-center py-5">
+                                <div class="alert alert-warning">Research reports could not be loaded. Please try again later.</div>
+                            </div>
+                        `;
+                    }
+                });
+        }
+
+        // Initialize everything when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            loadResearchCategories();
+            
+            // Load news
+            loadLatestNews('all', 'all-news-container');
+            loadLatestNews('technology', 'tech-news-container');
+            loadLatestNews('business', 'business-news-container');
+            loadLatestNews('marketing', 'marketing-news-container');
+            
+            // Load reports
+            loadFeaturedReports();
+            
+            // Animate stats when marketing section comes into view
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateStats();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            const marketingSection = document.querySelector('.marketing-services');
+            if (marketingSection) {
+                observer.observe(marketingSection);
+            }
+        });
+    </script>
+</body>
+</html>

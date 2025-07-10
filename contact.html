@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | HubTechResearch</title>
+    <meta name="description" content="Get in touch with HubTechResearch for technology research and marketing solutions.">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init('ItUSt5SObINE4slDY'); // Replace with your EmailJS public key
+        })();
+    </script>
+    
+    <style>
+        :root {
+            --primary-color: #4a6bff;
+            --secondary-color: #f8f9fa;
+            --accent-color: #ff6b6b;
+            --dark-color: #212529;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: url('../images/index/Vector_2.png') repeat, linear-gradient(135deg, var(--primary-color) 0%, #6c8eff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Contact Form */
+        .contact-form-card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        /* Contact Info */
+        .contact-info {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            background: rgb(13, 110, 253);
+            color: white;
+            flex-shrink: 0;
+        }
+        
+        .map-container {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .social-links .btn {
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links .btn:hover {
+            transform: translateY(-3px);
+            background-color: var(--primary-color);
+            color: white !important;
+        }
+        
+        /* Contact Image */
+        .contact-image {
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .contact-image img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        
+        /* Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Privacy Policy Modal */
+        .privacy-policy-content {
+            max-height: 60vh;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        .privacy-policy-content h4 {
+            margin-top: 20px;
+            color: var(--primary-color);
+        }
+
+        .privacy-policy-content h5 {
+            margin-top: 15px;
+            color: var(--dark-color);
+        }
+
+        .privacy-policy-content p {
+            margin-bottom: 10px;
+        }
+
+        .privacy-policy-content strong {
+            color: var(--dark-color);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-header {
+                text-align: center;
+                padding: 60px 0;
+            }
+            
+            .contact-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+
+            .privacy-policy-content {
+                max-height: 50vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div id="header"></div>
+
+    <!-- Page Header -->
+    <section class="page-header text-white py-5">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-12 text-center animate-on-scroll">
+                    <h1 class="display-4 fw-bold mb-3">Contact Us</h1>
+                    <p class="lead mb-0">We'd love to hear from you</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <section class="bg-light py-2">
+        <div class="container">
+            <!-- <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Contact</li>
+                </ol>
+            </nav> -->
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="py-3">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-lg-6 mb-5 mb-lg-0 animate-on-scroll">
+                    <h2 class="display-5 fw-bold mb-4">Get In Touch</h2>
+                    <p class="lead mb-4">Have questions about our services or research? Fill out the form and our team will get back to you within 24 hours.</p>
+                    
+                    <form id="contactForm" class="needs-validation" novalidate>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="firstName" class="form-label">First Name *</label>
+                                <input type="text" class="form-control" id="firstName" required>
+                                <div class="invalid-feedback">
+                                    Please provide your first name.
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="lastName" class="form-label">Last Name *</label>
+                                <input type="text" class="form-control" id="lastName" required>
+                                <div class="invalid-feedback">
+                                    Please provide your last name.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address *</label>
+                            <input type="email" class="form-control" id="email" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid email address.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone">
+                        </div>
+                        <div class="mb-3">
+                            <label for="company" class="form-label">Company</label>
+                            <input type="text" class="form-control" id="company">
+                        </div>
+                        <div class="mb-3">
+                            <label for="service" class="form-label">Service Interested In</label>
+                            <select class="form-select" id="service">
+                                <option value="">Select a service</option>
+                                <option value="email-marketing">Email Marketing</option>
+                                <option value="call-marketing">Call Marketing</option>
+                                <option value="digital-advertising">Digital Advertising</option>
+                                <option value="research">Technology Research</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message *</label>
+                            <textarea class="form-control" id="message" rows="5" required></textarea>
+                            <div class="invalid-feedback">
+                                Please enter your message.
+                            </div>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="consent" required>
+                            <label class="form-check-label" for="consent">I agree to the <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal">privacy policy</a> *</label>
+                            <div class="invalid-feedback">
+                                You must agree before submitting.
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary px-4">Send Message</button>
+                    </form>
+                </div>
+                <div class="col-lg-6 animate-on-scroll" style="transition-delay: 0.2s">
+                    <div class="contact-info card h-100">
+                        <div class="card-body p-4">
+                            <h3 class="card-title mb-4">Contact Information</h3>
+                            
+                            <div class="contact-item d-flex mb-4 align-items-start">
+                                <div class="contact-icon">
+                                    <i class="bi bi-envelope"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h5 class="mb-1">Email Us</h5>
+                                    <p class="mb-0"><a href="mailto:info@hubtechresearch.com" class="text-decoration-none">info@hubtechresearch.com</a></p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item d-flex align-items-start">
+                                <div class="contact-icon">
+                                    <i class="bi bi-clock"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h5 class="mb-1">Working Hours</h5>
+                                    <p class="mb-0">Monday - Friday : 24/7<br>
+                                    Saturday - Sunday : Closed</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Contact Image Section -->
+                            <div class="contact-image">
+                                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Contact HubTechResearch" class="img-fluid">
+                            </div>
+                            
+                            <!-- Additional Contact Info -->
+                            <div class="mt-4">
+                                <h5>Need Immediate Assistance?</h5>
+                                <p>While we don't have phone support, our email response time is typically within 2 hours during business days.</p>
+                                <p>For urgent matters, please include "URGENT" in your email subject line.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Policy Modal -->
+    <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="privacyModalLabel">Privacy Policy</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body privacy-policy-content">
+                    <h4>Compliance and Privacy Commitment:</h4>
+                    <p>At HubTechResearch, we take the privacy and security of our users and clients seriously. We are committed to ensuring that your personal data is handled with the utmost care and in full compliance with applicable privacy laws, including the General Data Protection Regulation (GDPR) and the CAN-SPAM Act.</p>
+                    
+                    <h5>1. General Data Protection Regulation (GDPR) Compliance</h5>
+                    <p>As a company that serves clients within the European Union (EU) and beyond, HubTechResearch adheres to the GDPR to ensure the responsible and transparent handling of personal data. Below are the key points of our GDPR compliance:</p>
+                    
+                    <p><strong>Data Collection and Use:</strong> We collect only the personal data necessary to provide our services (e.g., names, contact information, company names) and will always explain how and why we collect this information.</p>
+                    
+                    <p><strong>User Consent:</strong> We obtain explicit consent before collecting personal data through forms or cookies. Consent is freely given, specific, informed, and unambiguous. You have the right to withdraw consent at any time.</p>
+                    
+                    <p><strong>Data Subject Rights:</strong> Under GDPR, you have the right to access, correct, or request the deletion of your personal data. If you would like to exercise these rights, please contact us at info@hubtechresearch.com.</p>
+                    
+                    <p><strong>Data Security:</strong> We take appropriate security measures to protect your personal data from unauthorized access, alteration, or destruction. This includes encryption, secure storage, and strict access controls.</p>
+                    
+                    <p><strong>Data Retention:</strong> We retain your personal data only for as long as necessary to fulfill the purposes for which it was collected, after which it will be securely deleted.</p>
+                    
+                    <p><strong>Cookies and Tracking Technologies:</strong> We use cookies to enhance your browsing experience and for analytics purposes. You can control your cookie preferences by adjusting your browser settings or using our Cookie Consent tool, which allows you to accept or reject non-essential cookies.</p>
+                    
+                    <h5>2. CAN-SPAM Act Compliance</h5>
+                    <p>We are fully committed to complying with the CAN-SPAM Act, which governs the sending of commercial emails to recipients in the United States. Here's how we adhere to the law:</p>
+                    
+                    <p><strong>Unsubscribe Option:</strong> Every marketing email sent by HubTechResearch includes a clear and easy-to-find unsubscribe link, allowing you to opt out of receiving further communications at any time.</p>
+                    
+                    <p><strong>Honest and Transparent Subject Lines:</strong> We ensure that the subject lines of our emails are truthful and accurately represent the content of the message.</p>
+                    
+                    <p><strong>Physical Address:</strong> As required by the CAN-SPAM Act, all of our commercial emails contain a valid physical mailing address for HubTechResearch. This provides transparency and ensures compliance with the law.</p>
+                    
+                    <p><strong>Clear Sender Information:</strong> We provide clear and identifiable sender information in every commercial email, so recipients can easily recognize who the email is from.</p>
+                    
+                    <h5>3. Your Privacy Choices</h5>
+                    <p>We respect your privacy and provide several ways to manage your data preferences:</p>
+                    
+                    <p><strong>Opt-Out of Marketing Communications:</strong> You can easily unsubscribe from our marketing emails by clicking the unsubscribe link found at the bottom of all our emails. Alternatively, you can contact us directly at info@hubtechresearch.com.</p>
+                    
+                    <p><strong>Access to Your Personal Data:</strong> You have the right to request a copy of the personal data we hold about you. Please contact us at info@hubtechresearch.com to make such requests.</p>
+                    
+                    <p><strong>Data Deletion:</strong> If you wish to have your personal data deleted, please send us a request at info@hubtechresearch.com, and we will take action in accordance with your wishes, subject to legal retention requirements.</p>
+                    
+                    <p><strong>Access and Updates:</strong> We may update this compliance section from time to time to reflect changes in the law or our practices. We recommend that you review it periodically.</p>
+                    
+                    <p>At HubTechResearch, we are committed to maintaining a secure environment for your personal data. We continuously review and update our security measures to adapt to the evolving landscape of cyber threats and to ensure that your privacy is safeguarded in accordance with global data protection standards, including GDPR.</p>
+                    
+                    <p>If you have any questions regarding our security practices or would like more information on how we protect your data, please feel free to contact us at info@hubtechresearch.com.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">I Understand</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    
+    <script>
+        // Load header and footer
+        fetch('templates/header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header').innerHTML = data);
+            
+        fetch('templates/footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer').innerHTML = data);
+        
+        // Animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.classList.add('animated');
+                }
+            });
+        }
+        
+        // Initialize animations on load
+        window.addEventListener('load', animateOnScroll);
+        
+        // Animate elements on scroll
+        window.addEventListener('scroll', animateOnScroll);
+        
+        // Form validation and EmailJS submission
+        (function () {
+            'use strict'
+            
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation')
+            
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        
+                        if (form.checkValidity()) {
+                            // Get current date/time for the email
+                            const now = new Date();
+                            const timeString = now.toLocaleString();
+                            
+                            // Send form data using EmailJS
+                            const formData = {
+                                first_name: document.getElementById('firstName').value,
+                                last_name: document.getElementById('lastName').value,
+                                email: document.getElementById('email').value,
+                                phone: document.getElementById('phone').value || 'Not provided',
+                                company: document.getElementById('company').value || 'Not provided',
+                                service: document.getElementById('service').value ? 
+                                       document.getElementById('service').options[document.getElementById('service').selectedIndex].text : 'Not specified',
+                                message: document.getElementById('message').value,
+                                time: timeString
+                            };
+                            
+                            emailjs.send('service_76t2cxm', 'template_5s82n59', formData)
+                                .then(function(response) {
+                                    console.log('SUCCESS!', response.status, response.text);
+                                    alert('Thank you for your message! We will contact you shortly.');
+                                    form.reset();
+                                    form.classList.remove('was-validated');
+                                }, function(error) {
+                                    console.log('FAILED...', error);
+                                    alert('There was an error submitting your form. Please try again later.');
+                                });
+                        }
+                        
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+        })();
+    </script>
+</body>
+</html>

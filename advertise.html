@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advertise With Us | HubTechResearch</title>
+    <meta name="description" content="Advertising opportunities with HubTechResearch - reach our global audience of technology professionals and decision makers.">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init('ItUSt5SObINE4slDY'); // Replace with your EmailJS public key
+        })();
+    </script>
+    
+    <style>
+        :root {
+            --primary-color: #4a6bff;
+            --secondary-color: #f8f9fa;
+            --accent-color: #ff6b6b;
+            --dark-color: #212529;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: url('../images/index/Vector_2.png') repeat, linear-gradient(135deg, var(--primary-color) 0%, #6c8eff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Audience Stats */
+        .audience-stats {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .audience-stats:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .audience-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            background: rgb(13, 110, 253);
+        }
+        
+        /* Advertising Options */
+        .ad-option {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .ad-option:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .ad-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            background: rgb(13, 110, 253);
+        }
+        
+        /* Contact Form */
+        .contact-form-card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Privacy Policy Modal */
+        .privacy-policy-content {
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-header {
+                text-align: center;
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div id="header"></div>
+
+    <!-- Page Header -->
+    <section class="page-header text-white py-5">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-12 text-center animate-on-scroll">
+                    <h1 class="display-4 fw-bold mb-3">Advertise With Us</h1>
+                    <p class="lead mb-0">Reach our global audience of technology professionals and decision makers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <section class="bg-light py-2">
+        <div class="container">
+            <!-- <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Advertise</li>
+                </ol>
+            </nav> -->
+        </div>
+    </section>
+
+    <!-- Advertise Content -->
+    <section class="py-3">
+        <div class="container py-4">
+            <div class="row mb-3">
+                <div class="col-lg-6 mb-4 mb-lg-0 animate-on-scroll">
+                    <h2 class="display-5 fw-bold mb-4">Why Advertise With HubTechResearch?</h2>
+                    <p class="lead">Our platform connects a global audience of technology professionals, executives, and decision-makers every month.</p>
+                    <p>Whether you're looking to promote your products, services, or build brand awareness in the tech sector, we offer targeted advertising solutions to meet your goals.</p>
+                    <div class="d-flex flex-wrap gap-3 mt-4 animate-on-scroll" style="transition-delay: 0.2s">
+                        <a href="#advertising-options" class="btn btn-primary">View Options</a>
+                        <a href="#contact-form" class="btn btn-outline-primary">Contact Sales</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 animate-on-scroll" style="transition-delay: 0.2s">
+                    <div class="audience-stats shadow border card h-100">
+                        <div class="card-body p-4">
+                            <h3 class="card-title mb-4">Our Audience</h3>
+                            <div class="audience-item d-flex mb-3">
+                                <div class="audience-icon text-white rounded-circle">
+                                    <i class="bi bi-people"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h5 class="mb-1">Growing Daily</h5>
+                                    <p class="mb-0">Unique technology professionals visit us</p>
+                                </div>
+                            </div>
+                            <div class="audience-item d-flex mb-3">
+                                <div class="audience-icon text-white rounded-circle">
+                                    <i class="bi bi-globe"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h5 class="mb-1">Global Reach</h5>
+                                    <p class="mb-0">Engaging users from diverse regions</p>
+                                </div>
+                            </div>
+                            <div class="audience-item d-flex mb-3">
+                                <div class="audience-icon text-white rounded-circle">
+                                    <i class="bi bi-briefcase"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h5 class="mb-1">Industry-Focused</h5>
+                                    <p class="mb-0">Attracting professionals and decision-makers</p>
+                                </div>
+                            </div>
+                            <div class="audience-item d-flex">
+                                <div class="audience-icon text-white rounded-circle">
+                                    <i class="bi bi-graph-up"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h5 class="mb-1">Executive Insights</h5>
+                                    <p class="mb-0">Valuable to leaders and innovators</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="advertising-options" class="row mt-5 mb-3">
+                <div class="col-12 text-center mb-5 animate-on-scroll">
+                    <h2 class="display-5 fw-bold">Advertising Options</h2>
+                    <p class="lead">Choose the solution that best fits your marketing objectives</p>
+                </div>
+
+                <!-- First Card: Email Marketing -->
+                <div class="col-md-4 mb-4 animate-on-scroll" style="transition-delay: 0.2s">
+                    <div class="ad-option card h-100">
+                        <div class="card-body shadow border rounded  text-center p-4">
+                            <div class="ad-icon text-white mb-4 mx-auto">
+                                <i class="bi bi-envelope"></i>
+                            </div>
+                            <h3>Email Marketing</h3>
+                            <p class="text-muted">Targeted email campaigns to engage your audience</p>
+                            <ul class="text-start ps-4">
+                                <li>Personalized email lists</li>
+                                <li>Automation and segmentation</li>
+                                <li>Campaign analytics</li>
+                                <li>Open rate optimization</li>
+                            </ul>
+                            <a href="#contact-form" class="btn btn-sm btn-outline-primary mt-3">Get Rates</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Second Card: Call Marketing -->
+                <div class="col-md-4 mb-4 animate-on-scroll" style="transition-delay: 0.4s">
+                    <div class="ad-option card h-100">
+                        <div class="card-body shadow border rounded text-center p-4">
+                            <div class="ad-icon text-white mb-4 mx-auto">
+                                <i class="bi bi-phone"></i>
+                            </div>
+                            <h3>Call Marketing</h3>
+                            <p class="text-muted">Direct calls for personalized marketing</p>
+                            <ul class="text-start ps-4">
+                                <li>Outbound call campaigns</li>
+                                <li>Lead qualification</li>
+                                <li>Follow-up calls</li>
+                                <li>Sales conversion optimization</li>
+                            </ul>
+                            <a href="#contact-form" class="btn btn-sm btn-outline-primary mt-3">Get Rates</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Third Card: Single Touch -->
+                <div class="col-md-4 mb-4 animate-on-scroll" style="transition-delay: 0.6s">
+                    <div class="ad-option card h-100">
+                        <div class="card-body shadow border rounded text-center p-4">
+                            <div class="ad-icon text-white mb-4 mx-auto">
+                                <i class="bi bi-hand-index-thumb"></i>
+                            </div>
+                            <h3>Single Touch</h3>
+                            <p class="text-muted">One-touch engagement with your audience</p>
+                            <ul class="text-start ps-4">
+                                <li>Instant responses</li>
+                                <li>Quick surveys or promotions</li>
+                                <li>One-time offers</li>
+                                <li>Push notifications</li>
+                            </ul>
+                            <a href="#contact-form" class="btn btn-sm btn-outline-primary mt-3">Get Rates</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fourth Card: Double Touch -->
+                <div class="col-md-4 mb-4 animate-on-scroll" style="transition-delay: 0.8s">
+                    <div class="ad-option card h-100">
+                        <div class="card-body shadow border rounded text-center p-4">
+                            <div class="ad-icon text-white mb-4 mx-auto">
+                                <i class="bi bi-repeat"></i>
+                            </div>
+                            <h3>Double Touch</h3>
+                            <p class="text-muted">Reach your audience with a follow-up approach</p>
+                            <ul class="text-start ps-4">
+                                <li>Initial touchpoint with follow-up</li>
+                                <li>Increased conversion rates</li>
+                                <li>Reminder campaigns</li>
+                                <li>Engagement boosting strategies</li>
+                            </ul>
+                            <a href="#contact-form" class="btn btn-sm btn-outline-primary mt-3">Get Rates</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fifth Card: Content Syndication -->
+                <div class="col-md-4 mb-4 animate-on-scroll" style="transition-delay: 1s">
+                    <div class="ad-option card h-100">
+                        <div class="card-body shadow border rounded text-center p-4">
+                            <div class="ad-icon text-white mb-4 mx-auto">
+                                <i class="bi bi-share"></i>
+                            </div>
+                            <h3>Content Syndication</h3>
+                            <p class="text-muted">Distribute your content across multiple platforms</p>
+                            <ul class="text-start ps-4">
+                                <li>Increase content reach</li>
+                                <li>Drive traffic from various sources</li>
+                                <li>Boost brand visibility</li>
+                                <li>Cross-platform engagement</li>
+                            </ul>
+                            <a href="#contact-form" class="btn btn-sm btn-outline-primary mt-3">Get Rates</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sixth Card: Social Media Marketing -->
+                <div class="col-md-4 mb-4 animate-on-scroll" style="transition-delay: 1.2s">
+                    <div class="ad-option card h-100">
+                        <div class="card-body shadow border rounded text-center p-4">
+                            <div class="ad-icon text-white mb-4 mx-auto">
+                                <i class="bi bi-facebook"></i>
+                            </div>
+                            <h3>Social Media Marketing</h3>
+                            <p class="text-muted">Leverage social platforms for your marketing efforts</p>
+                            <ul class="text-start ps-4">
+                                <li>Facebook and Instagram Ads</li>
+                                <li>Twitter promotions</li>
+                                <li>LinkedIn advertising</li>
+                                <li>Social media influencer partnerships</li>
+                            </ul>
+                            <a href="#contact-form" class="btn btn-sm btn-outline-primary mt-3">Get Rates</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row animate-on-scroll">
+                <div class="col-lg-8 mx-auto">
+                    <div id="contact-form" class="card contact-form-card">
+                        <div class="card-body shadow border rounded p-4">
+                            <h2 class="text-center mb-4">Request Advertising Information</h2>
+                            <p class="text-center mb-4">Fill out the form below and our advertising team will contact you with detailed information and pricing.</p>
+                            
+                            <form id="advertiseForm" class="needs-validation" novalidate>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="adFirstName" class="form-label">First Name *</label>
+                                        <input type="text" class="form-control" id="adFirstName" required>
+                                        <div class="invalid-feedback">
+                                            Please provide your first name.
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="adLastName" class="form-label">Last Name *</label>
+                                        <input type="text" class="form-control" id="adLastName" required>
+                                        <div class="invalid-feedback">
+                                            Please provide your last name.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="adEmail" class="form-label">Email Address *</label>
+                                    <input type="email" class="form-control" id="adEmail" required>
+                                    <div class="invalid-feedback">
+                                        Please provide a valid email address.
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="adCompany" class="form-label">Company *</label>
+                                    <input type="text" class="form-control" id="adCompany" required>
+                                    <div class="invalid-feedback">
+                                        Please provide your company name.
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="adInterest" class="form-label">Advertising Interest *</label>
+                                    <select class="form-select" id="adInterest" required>
+                                        <option value="">Select an option</option>
+                                        <option value="Email Marketing">Email Marketing</option>
+                                        <option value="Single Touch">Single Touch</option>
+                                        <option value="Double Touch">Double Touch</option>
+                                        <option value="Content Syndication">Content Syndication</option>
+                                        <option value="Social Media Marketing">Social Media Marketing</option>
+                                        <option value="custom">Custom Package</option>
+                                        <option value="multiple">Multiple Options</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Please select an advertising option.
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="adBudget" class="form-label">Monthly Budget</label>
+                                    <select class="form-select" id="adBudget">
+                                        <option value="">Select budget range</option>
+                                        <option value="1-5k">$1,000 - $5,000</option>
+                                        <option value="5-10k">$5,000 - $10,000</option>
+                                        <option value="10-25k">$10,000 - $25,000</option>
+                                        <option value="25k+">$25,000+</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="adMessage" class="form-label">Additional Information</label>
+                                    <textarea class="form-control" id="adMessage" rows="4"></textarea>
+                                </div>
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="adConsent" required>
+                                    <label class="form-check-label" for="adConsent">I agree to the <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal">privacy policy</a> *</label>
+                                    <div class="invalid-feedback">
+                                        You must agree before submitting.
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Request Information</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Policy Modal -->
+    <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="privacyModalLabel">Privacy Policy</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body privacy-policy-content">
+                    <h4>Compliance and Privacy Commitment:</h4>
+                    <p>At HubTechResearch, we take the privacy and security of our users and clients seriously. We are committed to ensuring that your personal data is handled with the utmost care and in full compliance with applicable privacy laws, including the General Data Protection Regulation (GDPR) and the CAN-SPAM Act.</p>
+                    
+                    <h5>1. General Data Protection Regulation (GDPR) Compliance</h5>
+                    <p>As a company that serves clients within the European Union (EU) and beyond, HubTechResearch adheres to the GDPR to ensure the responsible and transparent handling of personal data. Below are the key points of our GDPR compliance:</p>
+                    
+                    <p><strong>Data Collection and Use:</strong> We collect only the personal data necessary to provide our services (e.g., names, contact information, company names) and will always explain how and why we collect this information.</p>
+                    
+                    <p><strong>User Consent:</strong> We obtain explicit consent before collecting personal data through forms or cookies. Consent is freely given, specific, informed, and unambiguous. You have the right to withdraw consent at any time.</p>
+                    
+                    <p><strong>Data Subject Rights:</strong> Under GDPR, you have the right to access, correct, or request the deletion of your personal data. If you would like to exercise these rights, please contact us info@hubtechresearch.com.</p>
+                    
+                    <p><strong>Data Security:</strong> We take appropriate security measures to protect your personal data from unauthorized access, alteration, or destruction. This includes encryption, secure storage, and strict access controls.</p>
+                    
+                    <p><strong>Data Retention:</strong> We retain your personal data only for as long as necessary to fulfill the purposes for which it was collected, after which it will be securely deleted.</p>
+                    
+                    <p><strong>Cookies and Tracking Technologies:</strong> We use cookies to enhance your browsing experience and for analytics purposes. You can control your cookie preferences by adjusting your browser settings or using our Cookie Consent tool, which allows you to accept or reject non-essential cookies.</p>
+                    
+                    <h5>2. CAN-SPAM Act Compliance</h5>
+                    <p>We are fully committed to complying with the CAN-SPAM Act, which governs the sending of commercial emails to recipients in the United States. Here's how we adhere to the law:</p>
+                    
+                    <p><strong>Unsubscribe Option:</strong> Every marketing email sent by HubTechResearch includes a clear and easy-to-find unsubscribe link, allowing you to opt out of receiving further communications at any time.</p>
+                    
+                    <p><strong>Honest and Transparent Subject Lines:</strong> We ensure that the subject lines of our emails are truthful and accurately represent the content of the message.</p>
+                    
+                    <p><strong>Physical Address:</strong> As required by the CAN-SPAM Act, all of our commercial emails contain a valid physical mailing address for HubTechResearch. This provides transparency and ensures compliance with the law.</p>
+                    
+                    <p><strong>Clear Sender Information:</strong> We provide clear and identifiable sender information in every commercial email, so recipients can easily recognize who the email is from.</p>
+                    
+                    <h5>3. Your Privacy Choices</h5>
+                    <p>We respect your privacy and provide several ways to manage your data preferences:</p>
+                    
+                    <p><strong>Opt-Out of Marketing Communications:</strong> You can easily unsubscribe from our marketing emails by clicking the unsubscribe link found at the bottom of all our emails. Alternatively, you can contact us directly at unsubscribe@hubtechresearch.com.</p>
+                    
+                    <p><strong>Access to Your Personal Data:</strong> You have the right to request a copy of the personal data we hold about you. Please contact us at info@hubtechresearch.com to make such requests.</p>
+                    
+                    <p><strong>Data Deletion:</strong> If you wish to have your personal data deleted, please send us a request at info@hubtechresearch.com, and we will take action in accordance with your wishes, subject to legal retention requirements.</p>
+                    
+                    <p><strong>Access and Updates:</strong> We may update this compliance section from time to time to reflect changes in the law or our practices. We recommend that you review it periodically.</p>
+                    
+                    <p>At HubTechResearch, we are committed to maintaining a secure environment for your personal data. We continuously review and update our security measures to adapt to the evolving landscape of cyber threats and to ensure that your privacy is safeguarded in accordance with global data protection standards, including GDPR.</p>
+                    
+                    <p>If you have any questions regarding our security practices or would like more information on how we protect your data, please feel free to contact us at info@hubtechresearch.com.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">I Understand</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    
+    <script>
+        // Load header and footer
+        fetch('templates/header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header').innerHTML = data);
+            
+        fetch('templates/footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer').innerHTML = data);
+        
+        // Animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.classList.add('animated');
+                }
+            });
+        }
+        
+        // Initialize animations on load
+        window.addEventListener('load', animateOnScroll);
+        
+        // Animate elements on scroll
+        window.addEventListener('scroll', animateOnScroll);
+        
+        // Form validation and submission
+        (function () {
+            'use strict'
+            
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation')
+            
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+    
+    if (form.checkValidity()) {
+        // Get current date/time for the email
+        const now = new Date();
+        const timeString = now.toLocaleString();
+        
+        // Send form data using EmailJS
+        const formData = {
+            first_name: document.getElementById('adFirstName').value,
+            last_name: document.getElementById('adLastName').value,
+            email: document.getElementById('adEmail').value,
+            company: document.getElementById('adCompany').value,
+            interest: document.getElementById('adInterest').options[document.getElementById('adInterest').selectedIndex].text,
+            budget: document.getElementById('adBudget').value ? 
+                   document.getElementById('adBudget').options[document.getElementById('adBudget').selectedIndex].text : 'Not specified',
+            message: document.getElementById('adMessage').value || 'No additional information provided',
+            time: timeString
+        };
+        emailjs.send('service_76t2cxm', 'template_3r2q7fe', formData)
+        // emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
+            .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+                alert('Thank you for your inquiry! We will contact you shortly.');
+                form.reset();
+                form.classList.remove('was-validated');
+            }, function(error) {
+                console.log('FAILED...', error);
+                alert('There was an error submitting your form. Please try again later.');
+            });
+    }
+    
+    form.classList.add('was-validated');
+}, false);
+                });
+        })();
+    </script>
+</body>
+</html>

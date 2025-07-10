@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | HubTechResearch</title>
+    <meta name="description" content="Learn about HubTechResearch - our mission, vision, and team of experts in technology research and marketing solutions.">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #4a6bff;
+            --secondary-color: #f8f9fa;
+            --accent-color: #ff6b6b;
+            --dark-color: #212529;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: url('../images/index/Vector_2.png') repeat, linear-gradient(135deg, var(--primary-color) 0%, #6c8eff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Value Cards */
+        .value-card {
+            transition: all 0.3s ease;
+            border-radius: 12px;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            background: rgba(13, 110, 253);
+        }
+        
+        /* Team Members */
+        .team-card {
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        .team-img {
+            height: 250px;
+            object-fit: cover;
+            object-position: top;
+        }
+        
+        .social-links a {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(74, 107, 255, 0.1);
+            color: var(--primary-color);
+            margin: 0 3px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: url('../images/index/Vector_2.png') repeat, linear-gradient(135deg, var(--dark-color) 0%, #343a40 100%);
+            position: relative;
+        }
+        
+        /* Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Mission Section */
+      
+        .core-values-section {
+            background-color: #f8f9fa;
+            border-radius: 12px;
+            padding: 3rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .team-img {
+                height: 200px;
+            }
+            
+            .core-values-section {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div id="header"></div>
+
+    <!-- Page Header -->
+    <section class="page-header text-white py-5">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-12 text-center animate-on-scroll">
+                    <h1 class="display-4 fw-bold mb-3">About HubTechResearch</h1>
+                    <p class="lead mb-0">Driving insight-driven growth for B2B teams through data and strategy</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <section class="bg-light py-2">
+        <div class="container">
+            <!-- <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">About Us</li>
+                </ol>
+            </nav> -->
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="py-1">
+        <div class="container py-4">
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 mb-4 mb-lg-0 animate-on-scroll">
+                    <h2 class="display-5 fw-bold mb-4">Our Story</h2>
+                    <p class="lead">Founded in 2015, HubTechResearch began as a small team of technology enthusiasts passionate about bridging the gap between cutting-edge research and practical business applications.</p>
+                    <p>What started as a technology blog quickly evolved into a full-service research and marketing firm as we recognized the growing need for data-driven marketing strategies in the tech sector.</p>
+                    <p>Today, we serve clients across 25 countries, helping them leverage technology insights to create impactful marketing campaigns.</p>
+                </div>
+                <div class="col-lg-6 animate-on-scroll" style="transition-delay: 0.2s">
+                    <img src="images/index/Our_Story.jpg" alt="Our Story" class="img-fluid rounded shadow">
+                </div>
+            </div>
+            
+            <!-- Updated Mission Section -->
+            <div class="row align-items-center mb-5 flex-lg-row-reverse">
+                <div class="col-lg-6 mb-4 mb-lg-0 animate-on-scroll">
+                    <h2 class="display-5 fw-bold mb-4">Our Mission</h2>
+                    <div class="mission-statement">
+                        <!-- <p class="lead fw-bold">Our mission is simple:</p> -->
+                        <p>To guide B2B teams toward smarter & insight driven growth.</p>
+                        <p>We help businesses uncover high intent opportunities, align sales and marketing, and drive meaningful conversations with the right prospects all through precise, actionable data and a strategic partnership approach.</p>
+                        <p>Whether you're scaling outreach, refining targeting or building pipeline confidence, we're here to support your journey with intelligence that moves the needle.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 animate-on-scroll" style="transition-delay: 0.2s">
+                    <img src="images/index/Our_Mission.avif" alt="Our Mission" class="img-fluid rounded shadow">
+                </div>
+            </div>
+            
+            <!-- Core Values Section -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="core-values-section animate-on-scroll">
+                        <div class="row">
+                            <div class="col-12 text-center mb-4">
+                                <h2 class="display-5 fw-bold">Our Core Values</h2>
+                                <p class="lead">We don't just deliver data we deliver confidence.</p>
+                                <p>Our values reflect how we work, partner, and grow with our clients.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="row g-4">
+                            <div class="col-md-6 animate-on-scroll">
+                                <div class="value-card card h-100 shadow-sm">
+                                    <div class="card-body p-4">
+                                        <h3 class="h4"><i class="bi bi-check-circle-fill text-primary me-2"></i> Relevance Over Volume</h3>
+                                        <p class="mb-0">We prioritize precision. Quality insights over mass data so your teams can focus on the leads that truly matter.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6 animate-on-scroll" style="transition-delay: 0.1s">
+                                <div class="value-card card h-100 shadow-sm">
+                                    <div class="card-body p-4">
+                                        <h3 class="h4"><i class="bi bi-check-circle-fill text-primary me-2"></i> Client Centric Approach</h3>
+                                        <p class="mb-0">Every solution begins with listening. We work closely with your teams to understand goals, refine strategy and stay aligned with your success.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6 animate-on-scroll" style="transition-delay: 0.2s">
+                                <div class="value-card card h-100 shadow-sm">
+                                    <div class="card-body p-4">
+                                        <h3 class="h4"><i class="bi bi-check-circle-fill text-primary me-2"></i> Integrity Always</h3>
+                                        <p class="mb-0">Transparency and trust are at the heart of what we do. From data sources to delivery, we operate with full clarity and responsibility.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6 animate-on-scroll" style="transition-delay: 0.3s">
+                                <div class="value-card card h-100 shadow-sm">
+                                    <div class="card-body p-4">
+                                        <h3 class="h4"><i class="bi bi-check-circle-fill text-primary me-2"></i> Insight Led Innovation</h3>
+                                        <p class="mb-0">Markets evolve so do we. Our technology and methods are continuously refined to meet the changing demands of modern B2B selling.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6 offset-md-3 animate-on-scroll" style="transition-delay: 0.4s">
+                                <div class="value-card card h-100 shadow-sm">
+                                    <div class="card-body p-4">
+                                        <h3 class="h4"><i class="bi bi-check-circle-fill text-primary me-2"></i> Results That Matter</h3>
+                                        <p class="mb-0">Our impact is measurable. We focus on helping you generate qualified pipeline, accelerate conversions and scale with confidence.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section py-5 text-white">
+        <div class="container py-4">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mb-4 mb-lg-0 animate-on-scroll">
+                    <h2 class="mb-3">Ready to work with us?</h2>
+                    <p class="mb-0">Discover how our research and marketing expertise can benefit your business.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end animate-on-scroll" style="transition-delay: 0.2s">
+                    <a href="contact.html" class="btn btn-light btn-lg px-4">Contact Our Team</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    
+    <script>
+        // Load header and footer
+        fetch('templates/header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header').innerHTML = data);
+            
+        fetch('templates/footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer').innerHTML = data);
+        
+        // Animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.classList.add('animated');
+                }
+            });
+        }
+        
+        // Initialize animations on load
+        window.addEventListener('load', function() {
+            animateOnScroll();
+        });
+        
+        // Animate elements on scroll
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
+</body>
+</html>

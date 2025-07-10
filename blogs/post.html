@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post | HubTechResearch</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        .post-header {
+            background-color: #f8f9fa;
+            padding: 1rem 0;
+            margin-bottom: 1rem;
+        }
+        
+        .post-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+        
+        .author-card {
+            border-left: 4px solid #0d6efd;
+            transition: all 0.3s;
+        }
+        
+        .author-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .related-post-card {
+            transition: all 0.3s;
+            height: 100%;
+        }
+        
+        .related-post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .post-tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background-color: #e9ecef;
+            border-radius: 50px;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .post-header {
+                padding: 3rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <main class="blog-post">
+        <!-- Post Header -->
+        <section class="post-header">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10 text-center">
+                        <span class="2" id="post-category">Technology</span>
+                        <h1 class="fw-bold mb-2" id="post-title">The Future of AI in Digital Marketing</h1>
+                        <!-- <div class="d-flex justify-content-center align-items-center">
+                            <img id="post-author-avatar" src="" class="rounded-circle me-2" width="40" height="40" alt="Author">
+                            <div class="text-start">
+                                <span id="post-author" class="d-block fw-bold"></span>
+                                <span id="post-date" class="text-muted small"></span>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Image -->
+        <section class="container mb-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <img src="" id="post-image" class="img-fluid rounded" alt="Featured Image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Post Content -->
+        <section class="container mb-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 post-content" id="post-content">
+                    <!-- Content loaded via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Tags -->
+        <section class="container mb-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="d-flex flex-wrap" id="post-tags">
+                        <!-- Tags loaded via JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Author Bio -->
+        <!-- <section class="container mb-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card author-card p-3">
+                        <div class="d-flex align-items-center">
+                            <img id="author-bio-avatar" src="" class="rounded-circle me-3" width="80" height="80" alt="Author">
+                            <div>
+                                <h3 id="author-bio-name" class="h5 mb-1"></h3>
+                                <p id="author-bio-role" class="text-muted mb-2"></p>
+                                <div class="d-flex">
+                                    <a href="#" class="text-primary me-3"><i class="bi bi-twitter"></i></a>
+                                    <a href="#" class="text-primary me-3"><i class="bi bi-linkedin"></i></a>
+                                    <a href="#" class="text-primary"><i class="bi bi-globe"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+        <!-- Related Posts -->
+        <!-- <section class="container mb-5">
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <h2 class="h4">Related Articles</h2>
+                </div>
+            </div>
+            <div class="row" id="related-posts">
+               
+            </div>
+        </section> -->
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    // Load header and footer with error handling
+    function loadTemplate(url, elementId) {
+        return fetch(url)
+            .then(response => {
+                if (!response.ok) throw new Error(`${url} not found (${response.status})`);
+                return response.text();
+            })
+            .then(data => {
+                const element = document.getElementById(elementId);
+                if (element) element.innerHTML = data;
+            })
+            .catch(err => {
+                console.error(`Error loading ${url}:`, err);
+                const element = document.getElementById(elementId);
+                if (element) element.innerHTML = `<div class="alert alert-warning">Error loading template</div>`;
+            });
+    }
+
+    // Function to safely set element content
+    function safeSetContent(elementId, content) {
+        const element = document.getElementById(elementId);
+        if (element) element.textContent = content;
+    }
+
+    // Function to safely set element attribute
+    function safeSetAttribute(elementId, attribute, value) {
+        const element = document.getElementById(elementId);
+        if (element) element.setAttribute(attribute, value);
+    }
+
+    // Function to safely set element HTML
+    function safeSetHTML(elementId, html) {
+        const element = document.getElementById(elementId);
+        if (element) element.innerHTML = html;
+    }
+
+    // Main function to load post content
+    async function loadPostContent() {
+        try {
+            // Get post ID from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const postId = urlParams.get('id');
+
+            if (!postId) throw new Error('No post ID specified in URL');
+
+            // Load blog posts data
+            const response = await fetch('../data/blog-posts.json');
+            if (!response.ok) throw new Error('Failed to load blog posts (HTTP '+response.status+')');
+            
+            const data = await response.json();
+            const post = data.posts.find(p => p.id == postId);
+            
+            if (!post) throw new Error(`Post with ID ${postId} not found`);
+
+            // Update post metadata
+            document.title = `${post.title} | HubTechResearch`;
+            safeSetContent('post-title', post.title);
+            safeSetContent('post-category', post.category.charAt(0).toUpperCase() + post.category.slice(1));
+            safeSetContent('post-author', post.author);
+            safeSetContent('post-date', 
+                new Date(post.date).toLocaleDateString('en-US', { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                }) + ` · ${post.readTime}`);
+            safeSetAttribute('post-image', 'src', post.image);
+            safeSetAttribute('post-image', 'alt', post.title);
+            safeSetAttribute('post-author-avatar', 'src', post.authorAvatar);
+            
+            // Update author bio section
+            safeSetContent('author-bio-name', post.author);
+            safeSetContent('author-bio-role', post.authorRole);
+            safeSetAttribute('author-bio-avatar', 'src', post.authorAvatar);
+
+            // Load post content - using all content parts from JSON
+            let fullContent = `<p class="lead">${post.excerpt}</p>`;
+            if (post.content) fullContent += post.content;
+            if (post.content_p2) fullContent += post.content_p2;
+            if (post.content_p3) fullContent += post.content_p3;
+            if (post.content_p4) fullContent += post.content_p4;
+            if (post.content_p5) fullContent += post.content_p5;
+            
+            safeSetHTML('post-content', fullContent);
+
+            // Load tags if they exist
+            if (post.tags && post.tags.length > 0) {
+                const tagsContainer = document.getElementById('post-tags');
+                if (tagsContainer) {
+                    tagsContainer.innerHTML = post.tags.map(tag => 
+                        `<span class="post-tag">${tag}</span>`
+                    ).join('');
+                }
+            }
+
+            // Load related posts
+            await loadRelatedPosts(post.category, post.id);
+            
+        } catch (error) {
+            console.error('Error loading post:', error);
+            safeSetHTML('post-content', `
+                <div class="alert alert-danger">
+                    ${error.message}. <a href="../blog.html">Return to blog</a>
+                </div>
+            `);
+        }
+    }
+
+    // Function to load related posts
+    async function loadRelatedPosts(category, currentPostId) {
+        try {
+            const response = await fetch('../data/blog-posts.json');
+            if (!response.ok) throw new Error('Failed to load posts data');
+            
+            const data = await response.json();
+            const relatedPosts = data.posts.filter(
+                post => post.category === category && post.id != currentPostId
+            ).slice(0, 3);
+            
+            const container = document.getElementById('related-posts');
+            if (!container) return;
+            
+            if (relatedPosts.length === 0) {
+                container.innerHTML = `
+                    <div class="col-12">
+                        <div class="alert alert-info">No related articles found.</div>
+                    </div>
+                `;
+                return;
+            }
+            
+            container.innerHTML = relatedPosts.map(post => `
+                <div class="col-md-4 mb-4">
+                    <div class="card related-post-card h-100">
+                        <img src="${post.image}" class="card-img-top" alt="${post.title}" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">${
+                                post.category.charAt(0).toUpperCase() + post.category.slice(1)
+                            }</span>
+                            <h3 class="h5">${post.title}</h3>
+                            <p class="card-text">${post.excerpt}</p>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <a href="post.html?id=${post.id}" class="btn btn-sm btn-outline-primary">Read Article</a>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        } catch (error) {
+            console.error('Error loading related posts:', error);
+            const container = document.getElementById('related-posts');
+            if (container) {
+                container.innerHTML = `
+                    <div class="col-12">
+                        <div class="alert alert-warning">Could not load related articles.</div>
+                    </div>
+                `;
+            }
+        }
+    }
+
+    // Initialize when DOM is loaded
+    document.addEventListener('DOMContentLoaded', () => {
+        // Load templates first
+        Promise.all([
+            loadTemplate('../templates/header.html', 'header'),
+            loadTemplate('../templates/footer.html', 'footer')
+        ]).then(() => {
+            // Then load post content
+            loadPostContent();
+        }).catch(err => {
+            console.error('Error loading templates:', err);
+            loadPostContent(); // Still try to load post content
+        });
+    });
+    </script>
+</body>
+</html>

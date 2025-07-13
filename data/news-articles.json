@@ -7,7 +7,7 @@
       "category": "technology",
       "date": "2023-06-15",
       "author": "Dr. Sarah Chen",
-      "image": "../images/news/quantum-computing.jpg",
+      "image": "images/news/quantum-computing.jpg",
       "popular": true,
       "content": "Full article content would go here..."
     },
@@ -18,7 +18,7 @@
       "category": "business",
       "date": "2023-06-12",
       "author": "Michael Johnson",
-      "image": "../images/news/ai-ethics.jpg",
+      "image": "images/news/ai-ethics.jpg",
       "popular": true,
       "content": "Full article content would go here..."
     },
@@ -29,7 +29,7 @@
       "category": "marketing",
       "date": "2023-06-10",
       "author": "Emily Rodriguez",
-      "image": "../images/news/marketing-trends.jpg",
+      "image": "images/news/marketing-trends.jpg",
       "popular": false,
       "content": "Full article content would go here..."
     },
@@ -40,7 +40,7 @@
       "category": "technology",
       "date": "2023-06-08",
       "author": "Thomas Weber",
-      "image": "../images/news/5g-rollout.jpg",
+      "image": "images/news/5g-rollout.jpg",
       "popular": true,
       "content": "Full article content would go here..."
     },
@@ -51,7 +51,7 @@
       "category": "business",
       "date": "2023-06-05",
       "author": "Lisa Park",
-      "image": "../images/news/tech-funding.jpg",
+      "image": "images/news/tech-funding.jpg",
       "popular": false,
       "content": "Full article content would go here..."
     },
@@ -62,7 +62,7 @@
       "category": "marketing",
       "date": "2023-06-03",
       "author": "David Wilson",
-      "image": "../images/news/email-marketing.jpg",
+      "image": "images/news/email-marketing.jpg",
       "popular": true,
       "content": "Full article content would go here..."
     },
@@ -73,7 +73,7 @@
       "category": "technology",
       "date": "2023-05-30",
       "author": "Robert Kim",
-      "image": "../images/news/edge-computing.avif",
+      "image": "images/news/edge-computing.avif",
       "popular": false,
       "content": "Full article content would go here..."
     },
@@ -84,7 +84,7 @@
       "category": "business",
       "date": "2023-05-28",
       "author": "Sophie Martin",
-      "image": "../images/news/data-privacy.avif",
+      "image": "images/news/data-privacy.avif",
       "popular": false,
       "content": "Full article content would go here..."
     }

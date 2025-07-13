@@ -309,27 +309,6 @@
         </button>
     </section>
 
-    <!-- Research Categories -->
-    <section class="research-categories py-2">
-        <div class="container py-4">
-            <h1 class="section-title  text-center mb-3 animate-on-scroll">Research Categories</h1>
-            
-            <!-- Modern Filter Tabs -->
-            <ul class="nav nav-pills filter-tabs justify-content-center animate-on-scroll" id="researchTabs" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="all-research-tab" data-bs-toggle="pill" data-bs-target="#all-research" type="button">All Categories</button>
-                </li>
-                <!-- Tabs will be populated from JSON categories -->
-            </ul>
-            
-            <div class="tab-content mt-4" id="researchTabsContent">
-                <div class="tab-pane fade show active" id="all-research" role="tabpanel">
-                    <div class="row" id="all-research-container"></div>
-                </div>
-                <!-- Panels will be populated from JSON categories -->
-            </div>
-        </div>
-    </section>
 
     <!-- Latest News with Tabs -->
     <section class="latest-news py-2 bg-light">
@@ -373,7 +352,9 @@
         </div>
     </section>
 
-    <!-- Marketing Services Highlight -->
+   
+
+       <!-- Marketing Services Highlight -->
     <section class="marketing-services py-5 text-white">
         <div class="container py-4">
             <div class="row align-items-center">
@@ -421,8 +402,29 @@
         </div>
     </section>
 
+   <!-- Resources Section -->
+<section class="resources-section py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold">Featured Resources</h2>
+            <p class="lead text-muted">Valuable content to help you grow your business</p>
+        </div>
+        
+        <!-- Resource Cards -->
+        <div class="row g-4" id="featured-resources-container">
+            <!-- Resources will be loaded here via JavaScript -->
+        </div>
+        
+        <div class="text-center mt-5">
+            <a href="/resources/" class="btn btn-primary px-4">View All Resources</a>
+        </div>
+    </div>
+</section>
+
+ 
+
     <!-- Research Reports -->
-    <section class="research-reports py-5">
+    <!-- <section class="research-reports py-5">
         <div class="container py-4">
             <h1 class="section-title text-center mb-5 animate-on-scroll">Featured Research Reports</h1>
             <div class="row animate-on-scroll" id="reports-container"></div>
@@ -430,7 +432,7 @@
                 <a href="/reports/" class="btn btn-primary">View All Reports</a>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Newsletter Subscription -->
     <div id="newsletter"></div>
@@ -444,15 +446,15 @@
     <!-- Initialize components -->
     <script>
         // Load templates
-        fetch('templates/header.html')
+        fetch('header.html')
             .then(response => response.text())
             .then(data => document.getElementById('header').innerHTML = data);
             
-        fetch('templates/footer.html')
+        fetch('footer.html')
             .then(response => response.text())
             .then(data => document.getElementById('footer').innerHTML = data);
             
-        fetch('templates/newsletter.html')
+        fetch('newsletter.html')
             .then(response => response.text())
             .then(data => document.getElementById('newsletter').innerHTML = data);
         
@@ -590,56 +592,58 @@
         }
         
         // Function to load news articles
-        function loadLatestNews(category, containerId) {
-            fetch('data/news-articles.json')
-                .then(response => response.json())
-                .then(data => {
-                    const container = document.getElementById(containerId);
-                    if (!container) return;
+       // In the index.html script section, update the loadLatestNews function:
 
-                    // Filter articles by category if not 'all'
-                    const articles = category === 'all' 
-                        ? data.articles 
-                        : data.articles.filter(article => article.category === category);
+function loadLatestNews(category, containerId) {
+    fetch('data/news-articles.json')
+        .then(response => response.json())
+        .then(data => {
+            const container = document.getElementById(containerId);
+            if (!container) return;
 
-                    // Display first 6 articles
-                    const articlesToShow = articles.slice(0, 6);
-                    
-                    container.innerHTML = articlesToShow.map(article => `
-                        <div class="col-md-6 col-lg-4 mb-4 animate-on-scroll">
-                            <div class="card h-100 shadow">
-                                <img src="${article.image}" class="card-img-top" alt="${article.title}" style="height: 200px; object-fit: cover;">
-                                <div class="card-body">
-                                    <span class="badge bg-primary mb-2">${article.category.charAt(0).toUpperCase() + article.category.slice(1)}</span>
-                                    <h3 class="h5">${article.title}</h3>
-                                    <p class="card-text">${article.excerpt}</p>
-                                </div>
-                                <div class=" bg-transparent">
-                                    <a href="/news/article.html?id=${article.id}" class="stretched-link"></a>
-                                </div>
+            // Filter articles by category if not 'all'
+            const articles = category === 'all' 
+                ? data.articles 
+                : data.articles.filter(article => article.category === category);
+
+            // Display first 6 articles
+            const articlesToShow = articles.slice(0, 6);
+            
+            container.innerHTML = articlesToShow.map(article => `
+                <div class="col-md-6 col-lg-4 mb-4 animate-on-scroll">
+                    <div class="card h-100 shadow-sm">
+                        <img src="${article.image}" class="card-img-top" alt="${article.title}" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">${article.category.charAt(0).toUpperCase() + article.category.slice(1)}</span>
+                            <h3 class="h5 card-title">${article.title}</h3>
+                            <p class="card-text">${article.excerpt}</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">${new Date(article.date).toLocaleDateString()}</small>
+                                <a href="/news/post.html?id=${article.id}" class="btn btn-sm btn-outline-primary">Read More</a>
                             </div>
                         </div>
-                    `).join('');
+                    </div>
+                </div>
+            `).join('');
 
-                    // If no articles, show message
-                    if (articles.length === 0) {
-                        container.innerHTML = `
-                            <div class="col-12 text-center py-5">
-                                <div class="alert alert-info">No ${category} news available at this time.</div>
-                            </div>
-                        `;
-                    }
-                })
-                .catch(error => {
-                    console.error('Error loading news:', error);
-                    document.getElementById(containerId).innerHTML = `
-                        <div class="col-12 text-center py-5">
-                            <div class="alert alert-warning">News could not be loaded. Please try again later.</div>
-                        </div>
-                    `;
-                });
-        }
-
+            // If no articles, show message
+            if (articles.length === 0) {
+                container.innerHTML = `
+                    <div class="col-12 text-center py-5">
+                        <div class="alert alert-info">No ${category} news available at this time.</div>
+                    </div>
+                `;
+            }
+        })
+        .catch(error => {
+            console.error('Error loading news:', error);
+            document.getElementById(containerId).innerHTML = `
+                <div class="col-12 text-center py-5">
+                    <div class="alert alert-warning">News could not be loaded. Please try again later.</div>
+                </div>
+            `;
+        });
+}
         // Function to load research reports
         function loadFeaturedReports() {
             fetch('data/research-reports.json')

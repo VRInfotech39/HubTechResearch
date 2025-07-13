@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article | HubTechResearch</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        .article-header {
+            background-color: #f8f9fa;
+            padding: 1rem 0;
+            margin-bottom: 3rem;
+        }
+        .article-img {
+            max-height: 500px;
+            object-fit: cover;
+            width: 100%;
+            margin-bottom: 2rem;
+            border-radius: 0.5rem;
+        }
+        .article-meta {
+            color: #6c757d;
+            margin-bottom: 1.5rem;
+        }
+        .article-content {
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 2rem 0;
+            border-radius: 0.5rem;
+        }
+        .related-article {
+            transition: transform 0.3s ease;
+        }
+        .related-article:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <div class="article-header">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 id="article-title" class="display-4 mb-3">Loading Article...</h1>
+                    <div class="article-meta d-flex justify-content-center align-items-center flex-wrap">
+                        <span id="article-author" class="me-3"><i class="bi bi-person"></i> Loading...</span>
+                        <span id="article-date" class="me-3"><i class="bi bi-calendar"></i> Loading...</span>
+                        <span id="article-category" class="badge bg-primary"><i class="bi bi-tag"></i> Loading...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="container mb-5">
+        <div class="row justify-content-center">
+            <article class="col-lg-10">
+                <img id="article-image" src="" alt="" class="article-img img-fluid shadow">
+                <div id="article-content" class="article-content">
+                    <p>Loading article content...</p>
+                </div>
+                
+                <div class="d-flex justify-content-between align-items-center mt-5 pt-3 border-top">
+                    <a href="news.html" class="btn btn-outline-primary"><i class="bi bi-arrow-left"></i> Back to News</a>
+                    <div class="share-buttons">
+                        <a href="#" class="btn btn-outline-secondary ms-2"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="btn btn-outline-secondary ms-2"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="btn btn-outline-secondary ms-2"><i class="bi bi-facebook"></i></a>
+                    </div>
+                </div>
+            </article>
+        </div>
+        
+        <section class="related-articles mt-5 pt-5">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="mb-4">Related Articles</h2>
+                </div>
+                <div class="row" id="related-articles-container">
+                    <!-- Related articles will be loaded here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Load header and footer
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header').innerHTML = data);
+            
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer').innerHTML = data);
+        
+        // Load article content
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const articleId = urlParams.get('id');
+            
+            if (!articleId) {
+                document.getElementById('article-title').textContent = 'Article Not Found';
+                document.getElementById('article-content').innerHTML = '<p>The requested article could not be found. Please return to the <a href="../news/">news page</a>.</p>';
+                return;
+            }
+            
+            fetch('../data/news-articles.json')
+                .then(response => response.json())
+                .then(data => {
+                    const article = data.articles.find(a => a.id == articleId);
+                    
+                    if (!article) {
+                        document.getElementById('article-title').textContent = 'Article Not Found';
+                        document.getElementById('article-content').innerHTML = '<p>The requested article could not be found. Please return to the <a href="../news/">news page</a>.</p>';
+                        return;
+                    }
+                    
+                    // Display the article
+                    document.title = `${article.title} | HubTechResearch`;
+                    document.getElementById('article-title').textContent = article.title;
+                    document.getElementById('article-author').innerHTML = `<i class="bi bi-person"></i> ${article.author}`;
+                    document.getElementById('article-date').innerHTML = `<i class="bi bi-calendar"></i> ${new Date(article.date).toLocaleDateString()}`;
+                    document.getElementById('article-category').innerHTML = `<i class="bi bi-tag"></i> ${article.category.charAt(0).toUpperCase() + article.category.slice(1)}`;
+                    document.getElementById('article-image').src = article.image;
+                    document.getElementById('article-image').alt = article.title;
+                    document.getElementById('article-content').innerHTML = article.content || `<p>${article.excerpt}</p><p>Full article content would appear here...</p>`;
+                    
+                    // Load related articles (same category)
+                    const relatedArticles = data.articles
+                        .filter(a => a.category === article.category && a.id != article.id)
+                        .slice(0, 3);
+                    
+                    const relatedContainer = document.getElementById('related-articles-container');
+                    if (relatedArticles.length > 0) {
+                        relatedContainer.innerHTML = relatedArticles.map(related => `
+                            <div class="col-md-4 mb-4">
+                                <div class="card h-100 related-article">
+                                    <img src="${related.image}" class="card-img-top" alt="${related.title}" style="height: 200px; object-fit: cover;">
+                                    <div class="card-body">
+                                        <span class="badge bg-primary mb-2">${related.category.charAt(0).toUpperCase() + related.category.slice(1)}</span>
+                                        <h3 class="h5">${related.title}</h3>
+                                        <p class="card-text">${related.excerpt}</p>
+                                    </div>
+                                    <div class="card-footer bg-transparent">
+                                        <a href="news_post.html?id=${related.id}" class="btn btn-sm btn-outline-primary">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        `).join('');
+                    } else {
+                        relatedContainer.innerHTML = `
+                            <div class="col-12">
+                                <div class="alert alert-info">No related articles found.</div>
+                            </div>
+                        `;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading article:', error);
+                    document.getElementById('article-title').textContent = 'Error Loading Article';
+                    document.getElementById('article-content').innerHTML = '<p>There was an error loading the article. Please try again later or return to the <a href="../news/">news page</a>.</p>';
+                });
+        });
+    </script>
+</body>
+</html>

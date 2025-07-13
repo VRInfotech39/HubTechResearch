@@ -1,0 +1,108 @@
+<section class="newsletter py-5 bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="mb-3 text-white">Stay Updated With Our Latest Research</h2>
+                <p class="lead mb-4 text-white">Subscribe to our newsletter for monthly insights, reports, and industry news</p>
+                
+                <form id="newsletter-form" class="row g-3 justify-content-center">
+                    <div class="col-md-8">
+                        <div class="input-group ">
+                            <input type="email" class="form-control shadow border form-control-lg" placeholder="Your email address" required>
+                            <button class="btn btn-primary btn-lg" type="submit">Subscribe</button>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-check float-none">
+                            <input class="form-check-input float-none" type="checkbox" id="newsletter-consent" required>
+                            <label class="form-check-label small text-white" for="newsletter-consent">
+                                I agree to receive emails about research and marketing insights
+                            </label>
+                        </div>
+                    </div>
+                </form>
+                
+                <div id="newsletter-success" class="alert alert-success mt-3 d-none">
+                    Thank you for subscribing! Please check your email to confirm.
+                </div>
+                <div id="newsletter-error" class="alert alert-danger mt-3 d-none">
+                    There was an error processing your subscription. Please try again.
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simulate form submission (replace with actual API call)
+            const successAlert = document.getElementById('newsletter-success');
+            const errorAlert = document.getElementById('newsletter-error');
+            
+            // Show loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Processing...';
+            submitBtn.disabled = true;
+            
+            // Simulate API call
+            setTimeout(() => {
+                // Randomly show success or error for demo purposes
+                const isSuccess = Math.random() > 0.2;
+                
+                if (isSuccess) {
+                    successAlert.classList.remove('d-none');
+                    errorAlert.classList.add('d-none');
+                    this.reset();
+                } else {
+                    errorAlert.classList.remove('d-none');
+                    successAlert.classList.add('d-none');
+                }
+                
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                
+                // Hide alerts after 5 seconds
+                setTimeout(() => {
+                    successAlert.classList.add('d-none');
+                    errorAlert.classList.add('d-none');
+                }, 5000);
+            }, 1500);
+        });
+    </script>
+    
+    <style>
+        .newsletter {
+            background-color: #f8f9fa;
+            border-top: 1px solid #e9ecef;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .newsletter .form-control {
+            border-right: 0;
+        }
+        
+        .newsletter .btn {
+            border-left: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .newsletter .input-group {
+                flex-direction: column;
+            }
+            
+            .newsletter .form-control,
+            .newsletter .btn {
+                width: 100%;
+                border-radius: 0.375rem !important;
+            }
+            
+            .newsletter .form-control {
+                border-right: 1px solid #ced4da !important;
+                border-bottom: 0;
+                margin-bottom: -1px;
+            }
+        }
+    </style>
+</section>

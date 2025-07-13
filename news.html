@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Tech News | HubTechResearch</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        .news-item {
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+        .news-item:hover {
+            transform: translateY(-5px);
+        }
+        .news-img {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+        .category-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .popular-news-item {
+            border-left: 3px solid var(--bs-primary);
+            padding-left: 15px;
+            margin-bottom: 15px;
+        }
+        /* Fix for dropdown z-index */
+        .site-header {
+            z-index: 1030; /* Higher than sidebar's sticky position */
+        }
+        .news-sidebar {
+            z-index: 1020; /* Lower than header */
+        }
+        /* Active filter highlight */
+        .filter-btn.active {
+            background-color: var(--bs-primary);
+            color: white !important;
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <main class="news-archive py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1 class="mb-3" id="page-title">Latest Technology News</h1>
+                    <p class="lead mb-4" id="page-subtitle">Stay updated with the latest developments in technology and marketing</p>
+                    
+                    <div class="d-flex flex-wrap gap-2 mb-4" id="filter-buttons">
+                        <button type="button" class="btn btn-outline-primary active filter-btn" data-filter="all">All</button>
+                        <button type="button" class="btn btn-outline-primary filter-btn" data-filter="technology">Technology</button>
+                        <button type="button" class="btn btn-outline-primary filter-btn" data-filter="business">Business</button>
+                        <button type="button" class="btn btn-outline-primary filter-btn" data-filter="marketing">Marketing</button>
+                    </div>
+                    
+                    <div class="row" id="news-container">
+                        <!-- News articles will be loaded here -->
+                    </div>
+                    
+                    <nav aria-label="News pagination" class="mt-5">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="news-sidebar sticky-top" style="top: 20px;">
+                        <div class="card mb-4 shadow">
+                            <div class="card-header bg-primary text-white">
+                                <h5 class="mb-0">Most Popular</h5>
+                            </div>
+                            <div class="card-body" id="popular-news">
+                                <!-- Popular news will be loaded here -->
+                            </div>
+                        </div>
+                        
+                        <div class="card shadow">
+                            <div class="card-header bg-primary text-white">
+                                <h5 class="mb-0">Subscribe</h5>
+                            </div>
+                            <div class="card-body">
+                                <p>Get the latest news delivered to your inbox</p>
+                                <form id="newsletter-sidebar">
+                                    <div class="mb-3">
+                                        <input type="email" class="form-control" placeholder="Your email" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary w-100">Subscribe</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Load header and footer
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header').innerHTML = data);
+            
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer').innerHTML = data);
+        
+        // Function to filter news
+        function filterNews(category) {
+            const newsItems = document.querySelectorAll('.news-item');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            
+            // Update active button
+            filterButtons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-filter') === category) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Filter items
+            newsItems.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            
+            // Update page title if filtered
+            if (category !== 'all') {
+                const categoryName = category.charAt(0).toUpperCase() + category.slice(1);
+                document.getElementById('page-title').textContent = `${categoryName} News`;
+                document.getElementById('page-subtitle').textContent = `Latest developments in ${categoryName}`;
+            } else {
+                document.getElementById('page-title').textContent = 'Latest Technology News';
+                document.getElementById('page-subtitle').textContent = 'Stay updated with the latest developments in technology and marketing';
+            }
+        }
+        
+        // Load news articles
+        function loadNewsArticles() {
+            fetch('../data/news-articles.json')
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('news-container');
+                    if (!container) return;
+                    
+                    container.innerHTML = data.articles.map(article => `
+                        <div class="col-md-6 mb-4 news-item" data-category="${article.category}">
+                            <div class="card h-100 shadow">
+                                <div class="position-relative">
+                                    <img src="${article.image}" class="card-img-top news-img" alt="${article.title}">
+                                    <span class="badge bg-primary position-absolute top-0 end-0 m-2">${article.category.charAt(0).toUpperCase() + article.category.slice(1)}</span>
+                                </div>
+                                <div class="card-body">
+                                    <h3 class="h5 card-title">${article.title}</h3>
+                                    <p class="card-text">${article.excerpt}</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small class="text-muted">${new Date(article.date).toLocaleDateString()}</small>
+                                        <a href="news_post.html?id=${article.id}" class="btn btn-sm btn-outline-primary">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `).join('');
+                    
+                    // Check URL for filter parameter
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const filterParam = urlParams.get('filter');
+                    
+                    if (filterParam && ['technology', 'business', 'marketing'].includes(filterParam)) {
+                        filterNews(filterParam);
+                    }
+                    
+                    // Initialize filtering buttons
+                    const filterButtons = document.querySelectorAll('.filter-btn');
+                    filterButtons.forEach(button => {
+                        button.addEventListener('click', function() {
+                            const filter = this.getAttribute('data-filter');
+                            filterNews(filter);
+                            
+                            // Update URL without reload
+                            const url = new URL(window.location);
+                            if (filter === 'all') {
+                                url.searchParams.delete('filter');
+                            } else {
+                                url.searchParams.set('filter', filter);
+                            }
+                            window.history.pushState({}, '', url);
+                        });
+                    });
+                })
+                .catch(error => {
+                    console.error('Error loading news:', error);
+                    document.getElementById('news-container').innerHTML = `
+                        <div class="col-12 text-center py-5">
+                            <div class="alert alert-danger">Failed to load news articles. Please try again later.</div>
+                        </div>
+                    `;
+                });
+        }
+        
+        // Load popular news
+        function loadPopularNews() {
+            fetch('../data/news-articles.json')
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('popular-news');
+                    if (!container) return;
+                    
+                    const popularArticles = data.articles.filter(article => 
+                        data.popular.includes(article.id)
+                    );
+                    
+                    container.innerHTML = popularArticles.map(article => `
+                        <div class="popular-news-item mb-3">
+                            <h6 class="mb-1"><a href="news_post.html?id=${article.id}" class="text-decoration-none">${article.title}</a></h6>
+                            <small class="text-muted">${new Date(article.date).toLocaleDateString()}</small>
+                        </div>
+                    `).join('');
+                })
+                .catch(error => {
+                    console.error('Error loading popular news:', error);
+                    document.getElementById('popular-news').innerHTML = `
+                        <div class="alert alert-warning">Failed to load popular news.</div>
+                    `;
+                });
+        }
+        
+        // Initialize everything when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            loadNewsArticles();
+            loadPopularNews();
+        });
+    </script>
+</body>
+</html>

@@ -140,7 +140,7 @@
         // Function to load featured post
         async function loadFeaturedPost() {
             try {
-                const response = await fetch('../data/blog-posts.json');
+                const response = await fetch('data/blog-posts.json');
                 if (!response.ok) throw new Error('Failed to load blog posts');
                 
                 const data = await response.json();
@@ -159,7 +159,7 @@
                                     <span class="badge bg-primary mb-2">Featured</span>
                                     <h2 class="card-title">${featuredPost.title}</h2>
                                     <p class="card-text">${featuredPost.excerpt}</p>
-                                    <a href="post.html?id=${featuredPost.id}" class="btn btn-light">Read Article</a>
+                                    <a href="blogs_post.html?id=${featuredPost.id}" class="btn btn-light">Read Article</a>
                                 </div>
                             </div>
                         </div>
@@ -173,7 +173,7 @@
         // Function to load blog posts
         async function loadBlogPosts() {
             try {
-                const response = await fetch('../data/blog-posts.json');
+                const response = await fetch('data/blog-posts.json');
                 if (!response.ok) throw new Error('Failed to load blog posts');
                 
                 const data = await response.json();
@@ -202,7 +202,7 @@
                                 <p class="card-text">${post.excerpt}</p>
                             </div>
                             <div class="card-footer bg-transparent">
-                                <a href="post.html?id=${post.id}" class="btn btn-outline-primary">Read Article</a>
+                                <a href="blogs_post.html?id=${post.id}" class="btn btn-outline-primary">Read Article</a>
                             </div>
                         </div>
                     </div>

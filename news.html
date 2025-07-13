@@ -158,7 +158,7 @@
         
         // Load news articles
         function loadNewsArticles() {
-            fetch('../data/news-articles.json')
+            fetch('data/news-articles.json')
                 .then(response => response.json())
                 .then(data => {
                     const container = document.getElementById('news-container');
@@ -221,7 +221,7 @@
         
         // Load popular news
         function loadPopularNews() {
-            fetch('../data/news-articles.json')
+            fetch('data/news-articles.json')
                 .then(response => response.json())
                 .then(data => {
                     const container = document.getElementById('popular-news');

@@ -110,18 +110,18 @@
             
             if (!articleId) {
                 document.getElementById('article-title').textContent = 'Article Not Found';
-                document.getElementById('article-content').innerHTML = '<p>The requested article could not be found. Please return to the <a href="../news/">news page</a>.</p>';
+                document.getElementById('article-content').innerHTML = '<p>The requested article could not be found. Please return to the <a href="news.html">news page</a>.</p>';
                 return;
             }
             
-            fetch('../data/news-articles.json')
+            fetch('data/news-articles.json')
                 .then(response => response.json())
                 .then(data => {
                     const article = data.articles.find(a => a.id == articleId);
                     
                     if (!article) {
                         document.getElementById('article-title').textContent = 'Article Not Found';
-                        document.getElementById('article-content').innerHTML = '<p>The requested article could not be found. Please return to the <a href="../news/">news page</a>.</p>';
+                        document.getElementById('article-content').innerHTML = '<p>The requested article could not be found. Please return to the <a href="news.html">news page</a>.</p>';
                         return;
                     }
                     
@@ -168,7 +168,7 @@
                 .catch(error => {
                     console.error('Error loading article:', error);
                     document.getElementById('article-title').textContent = 'Error Loading Article';
-                    document.getElementById('article-content').innerHTML = '<p>There was an error loading the article. Please try again later or return to the <a href="../news/">news page</a>.</p>';
+                    document.getElementById('article-content').innerHTML = '<p>There was an error loading the article. Please try again later or return to the <a href="news.html">news page</a>.</p>';
                 });
         });
     </script>

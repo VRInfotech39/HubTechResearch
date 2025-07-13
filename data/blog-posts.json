@@ -8,8 +8,8 @@
       "date": "2023-06-15",
       "author": "Alex Johnson",
       "authorRole": "Marketing Strategy Director",
-      "authorAvatar": "../images/authors/alex-johnson.jpg",
-      "image": "../images/blogs/marketing_dilemma.jpg",
+      "authorAvatar": "images/authors/alex-johnson.jpg",
+      "image": "images/blogs/marketing_dilemma.jpg",
       "content": "<p>As a marketing manager in today's data-driven business environment, I face a challenge that keeps me awake at night: how do I prove that brand awareness initiatives directly contribute to sales revenue? While my sales colleagues can point to closed deals and conversion rates, I'm often left defending campaigns that build long-term brand equity but don't show immediate returns on the quarterly P&L.</p><p>This struggle is more than just a budget battle—it's about securing the marketing investments that fuel sustainable business growth. Let me walk you through the structured approach I've developed to tackle this challenge using the MECE framework.</p><h3>Understanding Brand Awareness: The Foundation of Sales Success</h3><p>Brand awareness represents the degree to which consumers recognize and recall your brand when making purchasing decisions. It's the invisible force that influences customer behavior long before they enter your sales funnel. However, measuring its impact on sales requires a systematic approach that I've organized into three mutually exclusive categories.</p>",
       "content_p2": "<h3>1. Brand Recognition Metrics</h3><p>Brand recognition occurs when customers can identify your brand among competitors. This is measured through:</p><ul><li><strong>Aided Brand Recall</strong>: When customers recognize your brand from a list of options</li><li><strong>Visual Brand Recognition</strong>: Logo recognition tests and brand asset recall</li><li><strong>Category Association</strong>: How strongly customers associate your brand with specific product categories</li></ul><p>These metrics form the foundation of brand awareness but don't directly correlate to sales performance, which is where my challenge begins.</p><h3>2. Brand Recall Metrics</h3><p>Brand recall represents the next level—when customers spontaneously think of your brand without prompts:</p><ul><li><strong>Unaided Brand Recall</strong>: Top-of-mind awareness in category discussions</li><li><strong>Brand Salience</strong>: How easily your brand comes to mind in purchase situations</li><li><strong>Share of Voice</strong>: Your brand's presence in customer conversations and social media</li></ul><p>Higher recall typically indicates stronger purchase intent, but proving this connection requires sophisticated attribution modeling.</p>",
       "content_p3": "<h3>3. Brand Consideration Metrics</h3><p>This represents the bridge between awareness and sales:</p><ul><li><strong>Purchase Consideration</strong>: Likelihood of customers to consider your brand during purchase decisions</li><li><strong>Brand Preference</strong>: How customers rank your brand against competitors</li><li><strong>Intent to Purchase</strong>: Measured likelihood of future purchases</li></ul><h3>The Sales Impact Framework: Connecting Awareness to Revenue</h3><p>To prove ROI, I've developed a comprehensive framework that maps brand awareness to sales outcomes through four distinct pathways.</p><h3>Direct Sales Attribution</h3><p>The most straightforward connection involves tracking customers who convert after brand awareness touchpoints:</p><ul><li><strong>Campaign Attribution</strong>: Using UTM codes and tracking pixels to follow the customer journey from awareness campaigns to purchase</li><li><strong>Brand Search Lift</strong>: Measuring increases in branded search queries following awareness campaigns</li><li><strong>Store Visit Attribution</strong>: Tracking foot traffic increases in retail locations after brand campaigns</li></ul><p>Last quarter, our brand awareness campaign generated a 23% increase in branded search queries, leading to 1,247 additional website visits and ultimately 89 conversions worth $156,000 in revenue.</p>",
@@ -27,8 +27,8 @@
       "date": "2023-06-10",
       "author": "Sarah Williams",
       "authorRole": "Chief Sales Officer",
-      "authorAvatar": "../images/authors/sarah-williams.jpg",
-      "image": "../images/blogs/sales_listening.jpg",
+      "authorAvatar": "images/authors/sarah-williams.jpg",
+      "image": "images/blogs/sales_listening.jpg",
       "content": "As Chief Sales Officer, I've observed thousands of sales conversations across my career, and one pattern consistently separates top performers from average salespeople: exceptional listening skills. While many sales professionals focus on perfecting their pitch or objection handling, the most successful reps understand that selling is primarily about listening—not talking.",
       "content_p2": "This isn't just motivational rhetoric; it's a strategic imperative backed by data. Our top quartile performers spend 43% of their conversation time listening, compared to just 26% for bottom quartile reps. More importantly, deals with higher listening ratios close 19% faster and at 12% higher values. Let me share the systematic approach I've developed to transform sales conversations through strategic listening.",
       "readTime": "10 min read",
@@ -43,8 +43,8 @@
       "date": "2023-06-05",
       "author": "Michael Chen",
       "authorRole": "HR Technology Expert",
-      "authorAvatar": "../images/authors/michael-chen.jpg",
-      "image": "../images/blogs/hr_technology.avif",
+      "authorAvatar": "images/authors/michael-chen.jpg",
+      "image": "images/blogs/hr_technology.avif",
       "content": "The question isn't whether HR technology can improve work-life balance—it's already happening. From AI-powered scheduling systems at companies like Microsoft to wellness platforms at Google, HR technology is solving real problems that have plagued workers for decades.",
       "content_p2": "The most impactful HR technology focuses on enhancing the daily employee experience through practical, immediately applicable solutions. Modern workforce management technology addresses one of the most persistent work-life balance challenges: unpredictable scheduling.",
       "readTime": "8 min read",
@@ -57,21 +57,21 @@
       "id": 1,
       "name": "Alex Johnson",
       "role": "Marketing Strategy Director",
-      "avatar": "../images/authors/alex-johnson.jpg",
+      "avatar": "images/authors/alex-johnson.jpg",
       "postCount": 15
     },
     {
       "id": 2,
       "name": "Sarah Williams",
       "role": "Chief Sales Officer",
-      "avatar": "../images/authors/sarah-williams.jpg",
+      "avatar": "images/authors/sarah-williams.jpg",
       "postCount": 12
     },
     {
       "id": 3,
       "name": "Michael Chen",
       "role": "HR Technology Expert",
-      "avatar": "../images/authors/michael-chen.jpg",
+      "avatar": "images/authors/michael-chen.jpg",
       "postCount": 8
     }
   ]

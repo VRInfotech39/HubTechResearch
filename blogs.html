@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Blog | HubTechResearch</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+<style>
+    /* Blog specific styles */
+    .blog-homepage .featured-post {
+        height: 500px;
+        overflow: hidden;
+        border: none;
+        border-radius: 8px;
+    }
+
+    .blog-homepage .featured-post .card-img {
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.7);
+    }
+
+    .blog-homepage .featured-post .card-img-overlay {
+        background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+    }
+
+    .blog-homepage .featured-post-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+
+    .blog-homepage .card {
+        transition: transform 0.3s, box-shadow 0.3s;
+        border: none;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .blog-homepage .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .blog-homepage .card-img-top {
+        transition: transform 0.5s;
+    }
+
+    .blog-homepage .card:hover .card-img-top {
+        transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+        .blog-homepage .featured-post {
+            height: 400px;
+        }
+        
+        .blog-homepage .featured-post-content {
+            padding: 1rem;
+        }
+    }
+</style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <main class="blog-homepage">
+        <div class="container py-3">
+            <div class="row">
+                <div class="col-12 text-center mb-3">
+                    <h1 class="display-4 fw-bold">HubTechResearch Blog</h1>
+                    <p class="lead">Insights, analysis and commentary on technology and marketing trends</p>
+                </div>
+            </div>
+            
+            <div class="row mb-5" id="featured-post-container">
+                <!-- Featured post will be loaded here -->
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-8">
+                    <h2 class="mb-4">Latest Articles</h2>
+                    
+                    <div class="row" id="blog-posts">
+                        <!-- Blog posts will be loaded here -->
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mt-5">
+                    <div class="blog-sidebar pt-2">
+                        <div class="card border shadow mb-4">
+                            <div class="card-header bg-primary text-white">
+                                <h5 class="mb-0">Categories</h5>
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><a href="#" class="text-decoration-none">Technology </a></li>
+                                    <li class="mb-2"><a href="#" class="text-decoration-none">Marketing </a></li>
+                                    <li class="mb-2"><a href="#" class="text-decoration-none">Business </a></li>
+                                    <li class="mb-2"><a href="#" class="text-decoration-none">Analytics</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="card shadow border">
+                            <div class="card-header bg-primary text-white">
+                                <h5 class="mb-0">Subscribe</h5>
+                            </div>
+                            <div class="card-body">
+                                <p>Get the latest blog posts delivered to your inbox</p>
+                                <form id="blog-subscription">
+                                    <div class="mb-3">
+                                        <input type="email" class="form-control" placeholder="Your email" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary w-100">Subscribe</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    
+    <script>
+        // Load header and footer
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header').innerHTML = data);
+            
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer').innerHTML = data);
+        
+        // Function to load featured post
+        async function loadFeaturedPost() {
+            try {
+                const response = await fetch('../data/blog-posts.json');
+                if (!response.ok) throw new Error('Failed to load blog posts');
+                
+                const data = await response.json();
+                const featuredContainer = document.getElementById('featured-post-container');
+                
+                if (!featuredContainer || data.posts.length === 0) return;
+                
+                const featuredPost = data.posts[0];
+                
+                featuredContainer.innerHTML = `
+                    <div class="col-12">
+                        <div class="featured-post card bg-dark text-white">
+                            <img src="${featuredPost.image}" class="card-img" alt="${featuredPost.title}">
+                            <div class="card-img-overlay d-flex align-items-end">
+                                <div class="featured-post-content">
+                                    <span class="badge bg-primary mb-2">Featured</span>
+                                    <h2 class="card-title">${featuredPost.title}</h2>
+                                    <p class="card-text">${featuredPost.excerpt}</p>
+                                    <a href="post.html?id=${featuredPost.id}" class="btn btn-light">Read Article</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } catch (error) {
+                console.error('Error loading featured post:', error);
+            }
+        }
+
+        // Function to load blog posts
+        async function loadBlogPosts() {
+            try {
+                const response = await fetch('../data/blog-posts.json');
+                if (!response.ok) throw new Error('Failed to load blog posts');
+                
+                const data = await response.json();
+                const postsContainer = document.getElementById('blog-posts');
+                
+                if (!postsContainer) return;
+                
+                // Get all posts (including the first one for Latest Articles)
+                // const latestPosts = data.posts;
+                const latestPosts = data.posts.slice(1);
+                
+                if (latestPosts.length === 0) {
+                    postsContainer.innerHTML = '<div class="col-12"><div class="alert alert-info">No articles found.</div></div>';
+                    return;
+                }
+                
+                postsContainer.innerHTML = latestPosts.map(post => `
+                    <div class="col-md-6 mb-4">
+                        <div class="card border shadow h-100">
+                            <img src="${post.image}" class="card-img-top" alt="${post.title}" style="height: 200px; object-fit: cover;">
+                            <div class="card-body">
+                                <span class="badge bg-primary mb-2">${
+                                    post.category.charAt(0).toUpperCase() + post.category.slice(1)
+                                }</span>
+                                <h3 class="h5">${post.title}</h3>
+                                <p class="card-text">${post.excerpt}</p>
+                            </div>
+                            <div class="card-footer bg-transparent">
+                                <a href="post.html?id=${post.id}" class="btn btn-outline-primary">Read Article</a>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error('Error loading blog posts:', error);
+                const postsContainer = document.getElementById('blog-posts');
+                if (postsContainer) {
+                    postsContainer.innerHTML = `
+                        <div class="col-12">
+                            <div class="alert alert-danger">Could not load blog posts. Please try again later.</div>
+                        </div>
+                    `;
+                }
+            }
+        }
+
+        // Load content when page is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            loadFeaturedPost();
+            loadBlogPosts();
+        });
+    </script>
+</body>
+</html>

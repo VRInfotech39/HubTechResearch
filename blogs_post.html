@@ -193,7 +193,7 @@
             if (!postId) throw new Error('No post ID specified in URL');
 
             // Load blog posts data
-            const response = await fetch('../data/blog-posts.json');
+            const response = await fetch('data/blog-posts.json');
             if (!response.ok) throw new Error('Failed to load blog posts (HTTP '+response.status+')');
             
             const data = await response.json();
@@ -248,7 +248,7 @@
             console.error('Error loading post:', error);
             safeSetHTML('post-content', `
                 <div class="alert alert-danger">
-                    ${error.message}. <a href="../blog.html">Return to blog</a>
+                    ${error.message}. <a href="blog.html">Return to blog</a>
                 </div>
             `);
         }
@@ -257,7 +257,7 @@
     // Function to load related posts
     async function loadRelatedPosts(category, currentPostId) {
         try {
-            const response = await fetch('../data/blog-posts.json');
+            const response = await fetch('data/blog-posts.json');
             if (!response.ok) throw new Error('Failed to load posts data');
             
             const data = await response.json();
@@ -289,7 +289,7 @@
                             <p class="card-text">${post.excerpt}</p>
                         </div>
                         <div class="card-footer bg-transparent">
-                            <a href="post.html?id=${post.id}" class="btn btn-sm btn-outline-primary">Read Article</a>
+                            <a href="blogs_post.html?id=${post.id}" class="btn btn-sm btn-outline-primary">Read Article</a>
                         </div>
                     </div>
                 </div>

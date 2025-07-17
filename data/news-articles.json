@@ -2,92 +2,103 @@
   "articles": [
     {
       "id": 1,
-      "title": "Breakthrough in Quantum Computing Announced",
-      "excerpt": "Researchers have achieved quantum supremacy with a new 128-qubit processor that solves complex problems in seconds.",
+      "title": "China's Zeekr Develops 2,000HP Electric Hypercar, Smashing Performance Records",
+      "excerpt": "Geely's EV brand Zeekr prepares a hypercar with unprecedented 2,000 horsepower, eclipsing previous EV performance benchmarks.",
       "category": "technology",
-      "date": "2023-06-15",
-      "author": "Dr. Sarah Chen",
-      "image": "images/news/quantum-computing.jpg",
+      "date": "2025-07-13",
+      "author": "Admin",
+      "image": "../images/news/zeekr-hypercar.jpg",
       "popular": true,
-      "content": "Full article content would go here..."
+      "content": "<h2>Electric Vehicle Performance Reaches New Heights</h2><p>Chinese automaker Zeekr, under Geely, is developing an electric hypercar boasting over 2,000 horsepower, according to leaks from Chinese auto bloggers. This would make it one of the most powerful production EVs ever, surpassing even the 1,500hp Xiaomi SU7 Ultra. The rumored model is an upgraded version of Zeekr’s 001 FR, setting new benchmarks for acceleration and track performance.</p><p>Industry analysts note the staggering pace of progress in China's EV market, with domestic brands rapidly closing the gap with Western automakers. If realized, Zeekr's hypercar would join an elite group of electric hypercars - currently only Rimac's Nevera R exceeds this power output. This development underscores China's determination to lead in next-generation automotive technology.</p><h3>Global EV Developments</h3><p>Meanwhile in Europe, Lucid Motors set a new Guinness World Record by driving its Air Grand Touring sedan nearly 750 miles (1,205 km) on a single charge. The marathon journey spanned three countries from St. Moritz, Switzerland to Munich, Germany, beating the previous EV distance record by almost 100 miles. This achievement highlights advancements in battery technology and efficient design, demonstrating that long-distance EV travel is entering a new era.</p>"
     },
     {
       "id": 2,
-      "title": "Global Tech Giants Form AI Ethics Consortium",
-      "excerpt": "Leading technology companies establish new standards for responsible AI development and deployment.",
-      "category": "business",
-      "date": "2023-06-12",
-      "author": "Michael Johnson",
-      "image": "images/news/ai-ethics.jpg",
+      "title": "Intel Unveils 768-Core 'Diamond Rapids' CPU for AI Workloads",
+      "excerpt": "Intel's upcoming 192-core-per-socket processor promises revolutionary performance for data centers and AI applications.",
+      "category": "technology",
+      "date": "2025-07-13",
+      "author": "Admin",
+      "image": "../images/news/intel-diamond.jpg",
       "popular": true,
-      "content": "Full article content would go here..."
+      "content": "<h2>The Next Generation of Server Processing</h2><p>Intel has revealed details of its upcoming 'Diamond Rapids' Xeon CPU, slated for 2026, which will pack a staggering 192 cores per socket. Built on Intel's 18A process and Panther Cove architecture, this processor is designed for high-end servers and AI/cloud workloads. A single high-end Diamond Rapids chip consists of four compute tiles of 48 cores each, with servers supporting up to four sockets - enabling 768 cores per machine.</p><h3>Power and Cooling Challenges</h3><p>Such density brings immense performance but also significant challenges. A fully loaded 4-socket server could draw nearly 2,000W of power, requiring advanced cooling solutions. Intel is introducing a new socket design to accommodate these power-hungry CPUs. While promising for cloud and enterprise computing, some analysts question if 2026 might be 'too little, too late' for Intel against competitors like AMD and custom AI chips.</p><p>In related tech news, Amazon's AWS unveiled its custom 'In-Row Heat Exchanger' liquid cooling system designed to handle the heat from Nvidia's newest GPU clusters in its data centers. This proprietary solution addresses the scaling challenges of cooling high-power AI training hardware like Nvidia's 72-core GB200 NVL.</p>"
     },
     {
       "id": 3,
-      "title": "New Digital Marketing Trends for 2023",
-      "excerpt": "Experts predict conversational marketing and AI-powered personalization will dominate this year's strategies.",
-      "category": "marketing",
-      "date": "2023-06-10",
-      "author": "Emily Rodriguez",
-      "image": "images/news/marketing-trends.jpg",
+      "title": "AWS Unveils Agentic AI Tools to Supercharge Enterprise Automation",
+      "excerpt": "Amazon introduces AI agents capable of automating complex, multi-step business processes with minimal human input.",
+      "category": "technology",
+      "date": "2025-07-16",
+      "author": "Admin",
+      "image": "../images/news/aws-agentic-ai.jpg",
       "popular": false,
-      "content": "Full article content would go here..."
+      "content": "<h2>The Rise of Autonomous AI in Business</h2><p>At the AWS Summit, Amazon introduced groundbreaking 'agentic AI' capabilities designed to automate complex, multi-step business processes. These AI agents can perform tasks across applications, respond to changing conditions, and make decisions with minimal human intervention. AWS positions this as the next leap in enterprise automation, reducing operational overhead while accelerating innovation.</p><h3>Key Features</h3><ul><li><strong>Cross-Application Integration:</strong> Seamlessly connects disparate business systems</li><li><strong>Contextual Decision-Making:</strong> Adapts to real-time data fluctuations</li><li><strong>Self-Optimization:</strong> Learns from outcomes to improve future performance</li></ul><p>Early adopters report 40-60% reductions in process completion times for supply chain optimization, financial reporting, and customer service workflows. However, experts caution that human oversight remains critical for ethical compliance and complex judgment calls.</p>"
     },
     {
       "id": 4,
-      "title": "5G Rollout Accelerates Across Europe",
-      "excerpt": "Mobile operators report faster-than-expected deployment of next-generation networks in major cities.",
-      "category": "technology",
-      "date": "2023-06-08",
-      "author": "Thomas Weber",
-      "image": "images/news/5g-rollout.jpg",
+      "title": "Trump Announces $92 Billion AI & Energy Investment Initiative",
+      "excerpt": "U.S. administration unveils massive investment package targeting AI infrastructure and domestic tech manufacturing.",
+      "category": "business",
+      "date": "2025-07-15",
+      "author": "Admin",
+      "image": "../images/news/trump-ai-investment.jpg",
       "popular": true,
-      "content": "Full article content would go here..."
+      "content": "<h2>Major Push for U.S. Tech Dominance</h2><p>President Trump has unveiled a $92 billion investment package focused on AI infrastructure, energy grids, and domestic tech manufacturing. The initiative aims to counter China's AI momentum and secure U.S. supply chains, including tax credits, public-private partnerships, and defense contracts. This move comes as China aggressively pursues AI development despite U.S. sanctions, with domestic firms innovating workarounds using lower-grade semiconductors.</p><h3>Global Trade Implications</h3><p>The investment follows UNCTAD reports showing growing concentration in digital markets, with the top five digital multinationals now accounting for 48% of global sales (up from 21% in 2017). Seven of the world's ten most valuable companies are now digital giants spanning cloud services, e-commerce, AI and online advertising. The rapid expansion of generative AI has intensified concerns about Big Tech dominance, with companies like Microsoft and Google consolidating their positions through partnerships with AI startups.</p><p>Meanwhile, global trade expanded by an estimated $300 billion in the first half of 2025, growing at 1.5% in Q1 with projections of 2% growth in Q2. However, trade imbalances have widened, with the U.S. posting larger deficits while China and the EU record growing surpluses.</p>"
     },
     {
       "id": 5,
-      "title": "Tech Startups See Record Funding in Q2",
-      "excerpt": "Venture capital investment in technology startups reaches all-time high despite economic uncertainties.",
+      "title": "Thinking Machines Raises $2B at $10B Valuation for Agentic AI",
+      "excerpt": "Mira Murati's AI startup secures major funding to develop autonomous agentic systems for enterprise decision-making.",
       "category": "business",
-      "date": "2023-06-05",
-      "author": "Lisa Park",
-      "image": "images/news/tech-funding.jpg",
-      "popular": false,
-      "content": "Full article content would go here..."
+      "date": "2025-07-15",
+      "author": "Admin",
+      "image": "../images/news/thinking-machines.jpg",
+      "popular": true,
+      "content": "<h2>The Rise of Agentic AI</h2><p>Thinking Machines, the AI startup led by former OpenAI executive Mira Murati, has raised $2 billion in funding led by Andreessen Horowitz (a16z), valuing the company at $10 billion. The firm focuses on developing autonomous agentic AI systems for enterprise decision-making, marking one of the largest funding rounds of 2025.</p><h3>Enterprise AI Automation Boom</h3><p>This development coincides with AWS introducing new 'agentic AI' capabilities designed to automate complex, multi-step business processes. These AI agents can perform tasks across applications, respond to changing conditions, and make decisions with minimal human input. Amazon positions this as the next leap in enterprise automation, reducing operational overhead while accelerating innovation.</p><p>Financial institutions are also embracing AI, with Lloyds Bank launching 'Athena' - a generative AI assistant supporting customer service and internal operations. The tool automates responses, summarizes financial reports, and offers compliance insights, joining a growing trend of banks embedding AI into daily workflows.</p>"
     },
     {
       "id": 6,
-      "title": "Personalization Algorithms Transform Email Marketing",
-      "excerpt": "New machine learning approaches deliver 30% higher engagement rates for targeted campaigns.",
-      "category": "marketing",
-      "date": "2023-06-03",
-      "author": "David Wilson",
-      "image": "images/news/email-marketing.jpg",
-      "popular": true,
-      "content": "Full article content would go here..."
+      "title": "Global Trade Tensions Escalate Amid New US Tariffs",
+      "excerpt": "US imposes 30% tariffs on EU and Mexico, triggering trade disputes and market uncertainty.",
+      "category": "business",
+      "date": "2025-07-12",
+      "author": "Admin",
+      "image": "../images/news/us-tariffs.jpg",
+      "popular": false,
+      "content": "<h2>Trade War Risks Intensify</h2><p>The Trump administration has imposed 30% tariffs on imports from the European Union and Mexico, effective August 1, following collapsed trade talks. The measures also target Japan, South Korea, Canada, Brazil, and include a 50% tariff on copper imports. EU Trade Commissioner Maroš Šefčovič warned these tariffs would make current trading conditions 'almost impossible,' while Mexico criticized them as 'unfair treatment.'</p><h3>Market Reactions</h3><p>Despite the tensions, global markets have remained relatively stable, with the International Chamber of Commerce noting investors appear 'pretty sanguine.' However, commodity traders are rushing copper shipments into the US ahead of the tariff deadline, creating a profitable arbitrage opportunity with margins exceeding traditional levels by tenfold. US customs duty revenue has already surpassed $100 billion for the fiscal year, reflecting the scale of the new tariff regime.</p><p>The UK has launched its first trade strategy in over 30 years, pledging £5 billion in support to help businesses navigate these disruptions, while China's exports rose 5.8% year-on-year in June as companies rushed to ship goods before the August tariff deadline.</p>"
     },
     {
       "id": 7,
-      "title": "Edge Computing Adoption Grows in Manufacturing",
-      "excerpt": "Industrial companies report significant efficiency gains from decentralized computing architectures.",
-      "category": "technology",
-      "date": "2023-05-30",
-      "author": "Robert Kim",
-      "image": "images/news/edge-computing.avif",
+      "title": "Agentic AI Transforms Marketing as Brands Shift from Virtue-Signaling to Authenticity",
+      "excerpt": "July 2025 marketing trends show AI moving from assistance to autonomous action while consumers demand real impact over statements.",
+      "category": "marketing",
+      "date": "2025-07-01",
+      "author": "Admin",
+      "image": "../images/news/agentic-ai-marketing.jpg",
       "popular": false,
-      "content": "Full article content would go here..."
+      "content": "<h2>The Era of Autonomous Marketing AI</h2><p>Marketing in July 2025 is witnessing the rise of 'agentic AI' - systems that don't just assist but act autonomously. From automated stylists to media planners and campaign generators, these systems deliver meaningful results with minimal human intervention. CMOs report budgets over $10M annually going toward AI, though ROI tracking remains a challenge. The key differentiator is knowing where human oversight remains essential.</p><h3>Consumer Expectations Evolve</h3><p>Brand activism is undergoing a transformation, with consumers demanding authenticity over virtue-signaling. Brands demonstrating real impact through local initiatives, ethical operations and durable values are gaining trust without performative statements. Gen Z expectations are particularly revealing - they want immersive, valuable experiences beyond aesthetics, including 3D product previews and flexible payment options.</p><p>Holiday campaigns are already launching in July, with beauty and retail marketers using AI to predict demand and personalize offers. Strategies feature longer lead times, payment flexibility and micro-influencer bundles as brands prepare for Q4. In high-growth categories like beauty and wellness, investors prioritize clinical-grade claims and verified results over vague 'clean' branding.</p>"
     },
     {
       "id": 8,
-      "title": "New Data Privacy Regulations Take Effect",
-      "excerpt": "Updated compliance requirements impact how businesses collect and process customer information.",
-      "category": "business",
-      "date": "2023-05-28",
-      "author": "Sophie Martin",
-      "image": "images/news/data-privacy.avif",
+      "title": "Meta and Oakley Launch HSTN Smart Glasses Blending AR with Iconic Eyewear Design",
+      "excerpt": "The $499 limited edition Oakley Meta HSTN smart glasses combine augmented reality with premium sports eyewear.",
+      "category": "marketing",
+      "date": "2025-07-11",
+      "author": "Admin",
+      "image": "../images/news/oakley-meta.jpg",
       "popular": false,
-      "content": "Full article content would go here..."
+      "content": "<h2>Wearable Tech Meets Fashion</h2><p>Meta and Oakley have debuted their first collaborative product - the Oakley Meta HSTN smart glasses (pronounced 'Houston'). These $499 limited edition shades blend Oakley's sports eyewear design with Meta's augmented reality and audio technology, positioning as a stylish alternative to Snap Spectacles or Bose Frames.</p><h3>The New Marketing Frontier</h3><p>This launch exemplifies several key marketing trends for July 2025. First, the emphasis on limited availability creates urgency and exclusivity. Second, it demonstrates how brands are creating real-world products that deliver immersive experiences - exactly what Gen Z consumers demand. Third, it shows tech companies partnering with established lifestyle brands to gain cultural credibility.</p><p>The marketing approach combines:</p><ul><li><strong>Cultural Fluency:</strong> Leveraging Oakley's strong brand identity in sports and fashion</li><li><strong>Experiential Marketing:</strong> Offering augmented reality capabilities rather than just features</li><li><strong>Scarcity Tactics:</strong> Launching with a limited edition to drive early adoption</li></ul><p>Industry observers note this could be the beginning of a wave of similar collaborations as tech companies seek to make AR wearables more appealing to mainstream consumers beyond early adopters.</p>"
+    },
+    {
+      "id": 9,
+      "title": "AI + Empathy Emerges as Winning Combo in Customer Engagement",
+      "excerpt": "Brands achieving the highest lift from AI are those augmenting human creativity with sentiment tracking and adaptive messaging.",
+      "category": "marketing",
+      "date": "2025-07-16",
+      "author": "Admin",
+      "image": "../images/news/ai-empathy.avif",
+      "popular": false,
+      "content": "<h2>Balancing Technology with Human Connection</h2><p>The most successful marketing campaigns of July 2025 are those combining AI efficiency with emotional intelligence. Brands seeing the highest engagement lifts are using AI for sentiment tracking, nuanced message testing, and real-time adaptive flows - not to replace creatives, but to augment them. This approach allows for rapid iteration while maintaining authentic brand voices.</p><h3>Key Strategies</h3><ol><li><strong>Sentiment-Driven Content:</strong> AI analyzes emotional responses to tailor messaging</li><li><strong>Conversational Search:</strong> Leveraging first-party data for privacy-compliant personalization</li><li><strong>Meme Marketing at Scale:</strong> AI generates culturally responsive content quickly while maintaining authenticity</li></ol><p>Privacy concerns are being addressed through 'quieter' personalization that feels intuitive rather than invasive. As cookies disappear, brands are turning to conversational interfaces and zero-party data to build trust. The winning formula appears to be AI handling the heavy lifting of data analysis and optimization, while human marketers focus on strategic vision and emotional resonance.</p>"
     }
   ],
-  "popular": [1, 2, 4, 6]
+  "popular": [1, 2, 4, 5]
 }

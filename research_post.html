@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Post | HubTechResearch</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        .research-hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), var(--hero-image);
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .research-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+            border: none;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .research-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .research-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: #0d6efd;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+       
+        
+        .section-title {
+            border-bottom: 2px solid #0d6efd;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+        
+        .download-btn {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .download-btn:hover::after {
+            content: "Download PDF";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            border-radius: 0.25rem;
+        }
+
+        .img-fluid{
+            min-width: 30rem;
+        }
+
+        .bgimg{
+             background: url('images/index/Vector_3.png') repeat !important;
+            position: relative;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div id="header"></div>
+
+    <!-- Dynamic Hero Section -->
+    <section class="research-hero text-white" id="researchHero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10">
+                    <h1 class="display-3 fw-bold mb-4" id="researchTitle">Research Title</h1>
+                    <p class="lead mb-4" id="researchDescription">Research description will load here</p>
+                    <!-- <a href="#reports" class="btn btn-primary btn-lg px-4 me-2">View Reports</a> -->
+                    <a href="#content" class="btn btn-outline-light btn-lg px-4">Read Analysis</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dynamic Content Sections -->
+    <div class="container my-2" id="dynamicContent">
+        <!-- Content will be loaded here by JavaScript -->
+    </div>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get research ID from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const researchId = urlParams.get('id');
+            
+            // Load header and footer
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => document.getElementById('header').innerHTML = data);
+                
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => document.getElementById('footer').innerHTML = data);
+            
+            // Load research data
+            if (researchId) {
+                fetch('../data/research-categories.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        const research = data.find(item => item.id == researchId);
+                        if (research) {
+                            // Update page metadata
+                            document.title = `${research.title} | HubTechResearch`;
+                            
+                            // Update hero section
+                            document.getElementById('researchTitle').textContent = research.title;
+                            document.getElementById('researchDescription').textContent = research.description;
+                            document.getElementById('researchHero').style.backgroundImage = `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('${research.image}')`;
+                            
+                            // Generate dynamic content based on research category
+                            const dynamicContent = document.getElementById('dynamicContent');
+                            
+                            // Overview Section
+                            let contentHTML = `
+                                <section id="content" class="py-5">
+                                    <div class="container">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-6">
+                                                <h2 class="display-5 fw-bold mb-4">About ${research.title}</h2>
+                                                <p class="lead">${research.content.overview}</p>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <img src="${research.image}" alt="${research.title}" class="img-fluid rounded shadow">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>`;
+                            
+                            // Add content sections
+                            research.content.sections.forEach(section => {
+                                contentHTML += `
+                                <section class="py-3 content-section">
+                                    <div class="container">
+                                        <h2 class="section-title">${section.title}</h2>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <p>${section.content}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>`;
+                            });
+                            
+                            // Reports Section
+                            contentHTML += `
+                               
+                                
+                                <section class="p-3  text-white bgimg">
+                                    <div class="container">
+                                        <div class="text-center mb-5">
+                                            <h2 class="display-5 fw-bold">Our Research Methodology</h2>
+                                            <p class="lead">Rigorous processes for reliable insights</p>
+                                        </div>
+                                        
+                                        <div class="row g-4">
+                                            <div class="col-md-6">
+                                                <div class="card bg-gray-800 border-0 h-100">
+                                                    <div class="card-body p-4">
+                                                        <div class="d-flex mb-3">
+                                                            <div class="me-3">
+                                                                <i class="bi bi-collection fs-2 text-primary"></i>
+                                                            </div>
+                                                            <div>
+                                                                <h3 class="h5">Data Collection</h3>
+                                                                <p class="text-muted">We gather comprehensive data from industry sources, academic research, and real-world implementations.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-md-6">
+                                                <div class="card bg-gray-800 border-0 h-100">
+                                                    <div class="card-body p-4">
+                                                        <div class="d-flex mb-3">
+                                                            <div class="me-3">
+                                                                <i class="bi bi-graph-up fs-2 text-primary"></i>
+                                                            </div>
+                                                            <div>
+                                                                <h3 class="h5">Analysis</h3>
+                                                                <p class="text-muted">Our experts analyze trends, benchmark solutions, and identify key opportunities.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>`;
+                            
+                            dynamicContent.innerHTML = contentHTML;
+                            
+                          
+                        } else {
+                            document.getElementById('dynamicContent').innerHTML = `
+                                <div class="alert alert-danger my-5">
+                                    Research topic not found. Please <a href="/research/">browse our research categories</a>.
+                                </div>
+                            `;
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error loading research data:', error);
+                        document.getElementById('dynamicContent').innerHTML = `
+                            <div class="alert alert-danger my-5">
+                                Error loading research content. Please try again later.
+                            </div>
+                        `;
+                    });
+            } else {
+                document.getElementById('dynamicContent').innerHTML = `
+                    <div class="alert alert-danger my-5">
+                        No research topic specified. Please <a href="/research/">browse our research categories</a>.
+                    </div>
+                `;
+            }
+            
+           
+        });
+    </script>
+</body>
+</html>

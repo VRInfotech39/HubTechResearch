@@ -42,11 +42,15 @@
       }
 
       const templateParams = {
-        first_name: firstName,
-        last_name: lastName,
-        email: email,
-        phone: phone
-      };
+      first_name: firstName,
+      last_name: lastName,
+      email: email,
+      phone: phone,
+      hours_spent: document.getElementById("hoursSpent").value,
+      biggest_benefit: document.getElementById("biggestBenefit").value
+    };
+
+
 
       emailjs.send("service_wgwtwgs", "template_fwoajne", templateParams)
         .then(function (response) {
@@ -91,8 +95,8 @@
 
     <p>Biopharma professionals are embracing AI powered tools to create sharper, more engaging and faster presentations and your team can too.</p>
 
-    <h2>In Today’s Data Rich Environment, Standing Out is Essential</h2>
-    <p>Clear, concise and compelling slides are no longer optional. With AI, you can:</p>
+    <h2>In Today’s Data Rich Environment, Standing Out is Essential.</h2>
+    <p>Clear, concise and compelling slides are no longer optional. With Prezent AI, you can:</p>
     <ul class="list">
       <li>Reduce deck preparation time by up to 60%</li>
       <li>Automate complex visual storytelling</li>
@@ -109,7 +113,7 @@
     </ul>
 
 
-    <form id="ebookForm">
+   <form id="ebookForm">
   <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
     <div style="flex: 1 1 100%; margin-bottom: 10px;">
       <label for="firstName">First Name*</label><br>
@@ -124,8 +128,32 @@
       <input type="email" id="email" name="email" required style="width: 90%; padding: 5px;">
     </div>
     <div style="flex: 1 1 100%; margin-bottom: 10px;">
-      <label for="phone">Phone Number (with country code)*</label><br>
-      <input type="tel" id="phone" name="phone" required placeholder="+1 555-555-5555" style="width: 90%; padding: 5px;">
+      <label for="phone">Phone Number*</label><br>
+      <input type="tel" id="phone" name="phone" required placeholder="555-555-5555" style="width: 90%; padding: 5px;">
+    </div>
+
+    <!-- New Question 1 -->
+    <div style="flex: 1 1 80%; margin-bottom: 10px;">
+      <label style="width: 70%;" for="hoursSpent">Roughly how many hours does your team spend each month creating or refining internal and external presentations?*</label><br>
+      <select id="hoursSpent" name="hoursSpent" required style="width: 92%; padding: 5px;">
+        <option value="">Select an option</option>
+        <option value="Less than 5 hours">Less than 5 hours</option>
+        <option value="5–10 hours">5–10 hours</option>
+        <option value="10–20 hours">10–20 hours</option>
+        <option value="Over 20 hours">Over 20 hours</option>
+      </select>
+    </div>
+
+    <!-- New Question 2 -->
+    <div style="flex: 1 1 80%; margin-bottom: 10px;">
+      <label for="biggestBenefit">What would be the biggest benefit of reducing time spent on presentation creation in your function?*</label><br>
+      <select id="biggestBenefit" name="biggestBenefit" required style="width: 92%; padding: 5px;">
+        <option value="">Select an option</option>
+        <option value="Faster internal approvals and alignment">Faster internal approvals and alignment</option>
+        <option value="More time for strategic planning and execution">More time for strategic planning and execution</option>
+        <option value="Improved message consistency across teams">Improved message consistency across teams</option>
+        <option value="Better stakeholder or customer engagement">Better stakeholder or customer engagement</option>
+      </select>
     </div>
   </div>
 
@@ -146,7 +174,7 @@
 
     <!-- Footer -->
     <div class="footer">
-      <p class=" text-align: left; color:black;">If you no longer wish to receive an mail from us, you can <a href="https://hubtechresearch.us9.list-manage.com/unsubscribe?u=1f7caf97dd9042421fafad924&id=f9036a30bd&t=b&e=[UNIQID]&c=1e77f911a3">Unsubscribe</a> {hubtechresearch.com}.</p>
+      <p class=" text-align: left; color:black;"> <small> you no longer wish to receive an mail from us, you can <a href="https://hubtechresearch.us9.list-manage.com/unsubscribe?u=1f7caf97dd9042421fafad924&id=f9036a30bd&t=b&e=[UNIQID]&c=1e77f911a3">Unsubscribe</a> {hubtechresearch.com}.</small></p>
     </div>
   </div>
 </body>

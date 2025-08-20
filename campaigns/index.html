@@ -34,9 +34,9 @@
       const firstName = document.getElementById("firstName").value.trim();
       const lastName = document.getElementById("lastName").value.trim();
       // const email = document.getElementById("email").value.trim();
-      const phone = document.getElementById("phone").value.trim();
+      // const phone = document.getElementById("phone").value.trim();
 
-      if (!firstName || !lastName  || !phone) {
+      if (!firstName || !lastName) {
         alert("Please fill out all required fields.");
         return;
       }
@@ -45,9 +45,9 @@
       first_name: firstName,
       last_name: lastName,
       // email: email,
-      phone: phone,
-      hours_spent: document.getElementById("hoursSpent").value,
-      biggest_benefit: document.getElementById("biggestBenefit").value
+      // phone: phone,
+      // hours_spent: document.getElementById("hoursSpent").value,
+      // biggest_benefit: document.getElementById("biggestBenefit").value
     };
 
 
@@ -127,13 +127,13 @@
       <label for="email">Work Email*</label><br>
       <input type="email" id="email" name="email" required style="width: 90%; padding: 5px;">
     </div> -->
-    <div style="flex: 1 1 100%; margin-bottom: 10px;">
+    <!-- <div style="flex: 1 1 100%; margin-bottom: 10px;">
       <label for="phone">Phone Number*</label><br>
       <input type="tel" id="phone" name="phone" required placeholder="555-555-5555" style="width: 90%; padding: 5px;">
-    </div>
+    </div> -->
 
     <!-- New Question 1 -->
-    <div style="flex: 1 1 80%; margin-bottom: 10px;">
+    <!-- <div style="flex: 1 1 80%; margin-bottom: 10px;">
       <label style="width: 70%;" for="hoursSpent">Roughly how many hours does your team spend each month creating or refining internal and external presentations?*</label><br>
       <select id="hoursSpent" name="hoursSpent" required style="width: 92%; padding: 5px;">
         <option value="">Select an option</option>
@@ -142,10 +142,10 @@
         <option value="10–20 hours">10–20 hours</option>
         <option value="Over 20 hours">Over 20 hours</option>
       </select>
-    </div>
+    </div> -->
 
     <!-- New Question 2 -->
-    <div style="flex: 1 1 80%; margin-bottom: 10px;">
+    <!-- <div style="flex: 1 1 80%; margin-bottom: 10px;">
       <label for="biggestBenefit">What would be the biggest benefit of reducing time spent on presentation creation in your function?*</label><br>
       <select id="biggestBenefit" name="biggestBenefit" required style="width: 92%; padding: 5px;">
         <option value="">Select an option</option>
@@ -154,7 +154,7 @@
         <option value="Improved message consistency across teams">Improved message consistency across teams</option>
         <option value="Better stakeholder or customer engagement">Better stakeholder or customer engagement</option>
       </select>
-    </div>
+    </div> -->
   </div>
 
   <div style="text-align:center; margin:30px 0;">

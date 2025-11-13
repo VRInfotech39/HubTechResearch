@@ -31,13 +31,18 @@
         e.preventDefault();
         const firstName = document.getElementById("firstName").value.trim();
         const lastName = document.getElementById("lastName").value.trim();
+        const contactNumber = document.getElementById("contactNumber").value.trim();
 
-        if (!firstName || !lastName) {
+        if (!firstName || !lastName || !contactNumber) {
           alert("Please fill out all required fields.");
           return;
         }
 
-        const templateParams = { first_name: firstName, last_name: lastName };
+        const templateParams = { 
+          first_name: firstName, 
+          last_name: lastName, 
+          contact_number: contactNumber 
+        };
 
         emailjs.send("service_wgwtwgs", "template_fwoajne", templateParams)
           .then(function (response) {
@@ -91,7 +96,7 @@
 
     <p>This free eBook will empower leaders, marketing teams, and business professionals to communicate with confidence and precision in every presentation.</p>
 
-    <!-- Form -->
+    <!-- ✅ Form with Contact Number -->
     <form id="ebookForm">
       <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
         <div style="flex: 1 1 100%; margin-bottom: 10px;">
@@ -101,6 +106,10 @@
         <div style="flex: 1 1 100%; margin-bottom: 10px;">
           <label for="lastName">Last Name*</label><br>
           <input type="text" id="lastName" name="lastName" required style="width: 90%; padding: 5px;">
+        </div>
+        <div style="flex: 1 1 100%; margin-bottom: 10px;">
+          <label for="contactNumber">Contact Number*</label><br>
+          <input type="tel" id="contactNumber" name="contactNumber" required  style="width: 90%; padding: 5px;">
         </div>
       </div>
 

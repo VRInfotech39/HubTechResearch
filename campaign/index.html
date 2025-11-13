@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Free eBook] Seven Keys to Ace Executive Presentations</title>
+  <style>
+    body { font-family: 'Open Sans', sans-serif; background-color: #f5f5f5; margin:0; padding:20px; }
+    header { background: #ffffff; padding:10px 0; text-align:center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    header img { max-height: 50px; }
+    .container { max-width:600px; margin:20px auto; background:#fff; padding:20px; }
+    h1 { font-size:26px; font-weight:800; color:#0a2540; margin-top:0; text-align:center; }
+    h2 { font-size:22px; font-weight:800; color:#0a2540; margin-top:0; }
+    p { font-size:16px; color:#333; line-height:1.5; }
+    .button { display:inline-block; background-color:#0274bd; color:#fff; padding:12px 24px; text-decoration:none; border-radius:4px; font-weight:600; text-align:center; }
+    .footer { font-size:14px; color:#777; margin-top:30px; text-align:center; }
+    .footer a { color:#0274bd; text-decoration:none; }
+    .list { font-size:16px; color:#333; margin-top:10px; }
+    .list li { margin-bottom:10px; }
+    .preheader { display: none; }
+  </style>
+
+  <!-- EmailJS Integration -->
+  <script type="module">
+    import emailjs from 'https://esm.sh/@emailjs/browser@3.11.0';
+    emailjs.init('ZlSJGc-1Ux1qsPX5a'); // ✅ your key
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById("ebookForm");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const firstName = document.getElementById("firstName").value.trim();
+        const lastName = document.getElementById("lastName").value.trim();
+
+        if (!firstName || !lastName) {
+          alert("Please fill out all required fields.");
+          return;
+        }
+
+        const templateParams = { first_name: firstName, last_name: lastName };
+
+        emailjs.send("service_wgwtwgs", "template_fwoajne", templateParams)
+          .then(function (response) {
+            console.log("SUCCESS!", response.status, response.text);
+            const ebookUrl = "https://www.hubtechresearch.com/data/Prezent_ebook_Acing Executive Presentations.pdf";
+            const link = document.createElement("a");
+            link.href = ebookUrl;
+            link.download = "Seven_Keys_to_Ace_Executive_Presentations.pdf";
+            link.target = '_blank';
+            link.rel = 'noopener';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+          }, function (error) {
+            console.error("FAILED...", error);
+            alert("There was an error submitting the form. Please try again.");
+          });
+      });
+    });
+  </script>
+
+</head>
+<body>
+  <!-- Preheader -->
+  <div class="preheader" style="color: #f5f5f5; height: 1px; visibility: hidden;">
+    Master the art of leadership communication with seven proven strategies for winning executive presentations.
+  </div>
+
+  <!-- Header -->
+  <header>
+    <img src="https://www.hubtechresearch.com/images/prezent.png" alt="Prezent logo">
+  </header>
+
+  <div class="container">
+    <!-- Cover Image -->
+    <img src="https://cdn.prod.website-files.com/684fcd07d46735f1ec2dfb81/686bd33807af92835578b896_666c3729e0eef92f117d5484_ssaa.webp" alt="Seven Keys to Ace Executive Presentations" style="width:100%; height:300px;">
+
+    <h1>Seven Keys to Ace Executive Presentations</h1>
+    <p>Discover how top executives and professionals are mastering presentation skills with the help of AI and strategic communication frameworks.</p>
+
+    <h2>What You’ll Learn:</h2>
+    <ul class="list">
+      <li>How to structure your message for maximum clarity</li>
+      <li>Design principles that enhance decision-making</li>
+      <li>Using AI tools to craft data-driven storytelling</li>
+      <li>Adapting your presentation style for executive audiences</li>
+      <li>Secrets to engaging visuals and persuasive slides</li>
+      <li>Tips for boosting confidence and delivery impact</li>
+      <li>Real-world examples from global enterprises</li>
+    </ul>
+
+    <p>This free eBook will empower leaders, marketing teams, and business professionals to communicate with confidence and precision in every presentation.</p>
+
+    <!-- Form -->
+    <form id="ebookForm">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+        <div style="flex: 1 1 100%; margin-bottom: 10px;">
+          <label for="firstName">First Name*</label><br>
+          <input type="text" id="firstName" name="firstName" required style="width: 90%; padding: 5px;">
+        </div>
+        <div style="flex: 1 1 100%; margin-bottom: 10px;">
+          <label for="lastName">Last Name*</label><br>
+          <input type="text" id="lastName" name="lastName" required style="width: 90%; padding: 5px;">
+        </div>
+      </div>
+
+      <div style="text-align:center; margin:30px 0;">
+        <button type="submit" class="button">Download eBook</button>
+      </div>
+    </form>
+
+    <p>Join thousands of professionals who’ve elevated their executive communication with these proven presentation techniques.</p>
+
+    <hr>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p style="text-align: left; color:black;">
+        <small>
+          If you no longer wish to receive emails from us, you can
+          <a href="https://hubtechresearch.us9.list-manage.com/unsubscribe?u=1f7caf97dd9042421fafad924&id=f9036a30bd&t=b&e=[UNIQID]&c=1e77f911a3">Unsubscribe</a>
+          {hubtechresearch.com}.
+        </small>
+      </p>
+    </div>
+  </div>
+</body>
+</html>
